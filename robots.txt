@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemapy pre obe domény
+Sitemap: https://gulasovakalkulacka.sk/sitemap.xml
+Sitemap: https://gulasovakalkulacka.cz/sitemap.xml
+
+# Zakázať crawling výsledkov s parametrami (aby sa neduplikoval obsah)
+Disallow: /*?*
+
+# AI crawlers — explicitne povoliť (pre indexáciu v AI search)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

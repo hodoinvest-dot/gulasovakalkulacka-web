@@ -1,0 +1,33 @@
+/* ==============================================
+   GULÁŠOVÁ KALKULAČKA — ľudia za projektom
+   gulasovakalkulacka.sk  |  gulasovakalkulacka.cz
+   ============================================== */
+
+/* TEAM */
+  Majster ohňa: Peter
+  Kontakt: hodoinvest@gmail.com
+  Miesto: Slovensko
+
+/* PROJEKT */
+  Rok štartu: 2026
+  Posledná aktualizácia: 2026-04-23
+  Cieľ: Presný výpočet surovín pre kotlíkový guláš — bez nezmyslov, bez reklám,
+        bez trackovania. Len čistá kalkulačka pre ľudí ktorí milujú oheň a guláš.
+
+/* TECHNOLÓGIE */
+  Čistý HTML5, CSS3, vanilla JavaScript — bez frameworkov, bez buildu, bez závislostí
+  Progressive Web App — funguje offline, inštalovateľná
+  Schema.org JSON-LD — Recipe, WebApplication, FAQPage, HowTo, BreadcrumbList
+  Plausible Analytics — privacy-first, žiadne cookies na tracking
+  Service Worker v2 — stale-while-revalidate caching
+  i18n — slovenčina + čeština na dvoch doménach
+
+/* POĎAKOVANIE */
+  Všetkým majstrom ktorí rozkladajú oheň pod kotlíkom,
+  miešajú varechu kolmo na telo, a nevedia si pomôcť od dymu vo fúzoch.
+  Robíte najlepšiu robotu na svete.
+
+/* POZDRAV DEVELOPEROM */
+  Ak si tento súbor čítaš, si človek ktorý rozumie webu.
+  Napíš nám — vždy si rád pokecám o PWA, o kompresii ikôn,
+  alebo o tom prečo je vanilla JS stále najlepšia voľba.

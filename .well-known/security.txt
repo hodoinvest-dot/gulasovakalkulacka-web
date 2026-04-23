@@ -1,0 +1,11 @@
+# Security contact pre Gulášovú kalkulačku
+# https://gulasovakalkulacka.sk  |  https://gulasovakalkulacka.cz
+
+Contact: mailto:hodoinvest@gmail.com
+Expires: 2027-04-23T00:00:00.000Z
+Preferred-Languages: sk, cs, en
+Canonical: https://gulasovakalkulacka.sk/.well-known/security.txt
+Canonical: https://gulasovakalkulacka.cz/.well-known/security.txt
+
+# Ak nájdete bezpečnostnú chybu, prosím dajte vedieť emailom.
+# Vlastné RFC 9116 deklarovanie — bez bug bounty, ale s poďakovaním.

@@ -1,0 +1,34 @@
+# === Gulášová kalkulačka — .gitignore ===
+
+# Interné poznámky — nikdy na GitHub
+BRIEFING_RANO.md
+refresh-trigger.tmp
+
+# Backupy a dočasné súbory
+*.bak
+*.backup
+*.tmp
+*.swp
+*~
+
+# OS súbory
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor súbory
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logy
+*.log
+npm-debug.log*
+
+# CNAME pomocné súbory (Cloudflare Pages to nepotrebuje, GH Pages má iný setup)
+CNAME-sk
+CNAME-cz
+
+# OG backup ak existuje
+og-image-BACKUP.jpg

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ============= SLOVENSKÁ VERZIA ============= -->
+  <url>
+    <loc>https://gulasovakalkulacka.sk/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gulasovakalkulacka.sk/"/>
+  </url>
+
+  <url>
+    <loc>https://gulasovakalkulacka.sk/#faq</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/#faq"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/#faq"/>
+  </url>
+
+  <url>
+    <loc>https://gulasovakalkulacka.sk/#kotliky</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/#kotliky"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/#kotliky"/>
+  </url>
+
+  <url>
+    <loc>https://gulasovakalkulacka.sk/#timelineSection</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gulasovakalkulacka.sk/#partneri</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ============= ČESKÁ VERZIA ============= -->
+  <url>
+    <loc>https://gulasovakalkulacka.cz/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gulasovakalkulacka.sk/"/>
+  </url>
+
+  <url>
+    <loc>https://gulasovakalkulacka.cz/#faq</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/#faq"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/#faq"/>
+  </url>
+
+  <url>
+    <loc>https://gulasovakalkulacka.cz/#kotliky</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/#kotliky"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/#kotliky"/>
+  </url>
+
+  <url>
+    <loc>https://gulasovakalkulacka.cz/#timelineSection</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gulasovakalkulacka.cz/#partneri</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

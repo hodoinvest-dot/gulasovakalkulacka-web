@@ -1,0 +1,52 @@
+# === Cloudflare Pages custom headers ===
+# Bezpečnostné hlavičky + cache stratégia pre PWA
+# Dokumentácia: https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# Service Worker — nikdy nekešovať, vždy revalidate
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+  Service-Worker-Allowed: /
+
+# HTML — krátky cache, rýchle updaty
+/*.html
+  Cache-Control: public, max-age=3600
+
+# Manifest
+/manifest.json
+  Content-Type: application/manifest+json
+  Cache-Control: public, max-age=3600
+
+# Statické obrázky — cache 1 rok (immutable)
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Sitemap a robots — aktualizujú sa občas
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+# Well-known files
+/.well-known/*
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain

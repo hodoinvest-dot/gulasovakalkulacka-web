@@ -1,0 +1,54 @@
+{
+  "name": "Gulášová Kalkulačka",
+  "short_name": "Guláš Kalk",
+  "description": "Presný výpočet surovín pre guláš v kotlíku. 11 receptov, nákupný zoznam, timeline varenia.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fdfaf1",
+  "theme_color": "#4e2a1e",
+  "lang": "sk",
+  "dir": "ltr",
+  "categories": ["food", "lifestyle", "utilities"],
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Hovädzí guláš",
+      "short_name": "Hovädzí",
+      "description": "Rýchly výpočet hovädzieho gulášu",
+      "url": "./?recipe=hovadzi"
+    },
+    {
+      "name": "Poľovnícky guláš",
+      "short_name": "Poľovnícky",
+      "description": "Rýchly výpočet poľovníckeho gulášu",
+      "url": "./?recipe=polovnicky"
+    }
+  ]
+}
