@@ -1505,7 +1505,7 @@
     <div class="footer-nav">
       <a href="#seoContent" id="navFaq">FAQ</a>
       <a href="#" onclick="showPrivacy(event)" id="navPrivacy">Ochrana údajov</a>
-      <a href="mailto:info@gulasovakalkulacka.sk" id="navContact">Kontakt</a>
+      <a href="https://www.kotlik.sk/kontakty" id="navContact" target="_blank" rel="noopener">Kontakt</a>
     </div>
     <div class="copyright">
       © 2026 gulasovakalkulacka.sk / .cz<br>
@@ -2258,6 +2258,14 @@ function switchLang(lang) {
   const p = PARTNERS[lang];
   document.getElementById('partnerLink').href = withUTM(p.url, 'footer_partner');
   document.getElementById('partnerLink').textContent = p.site;
+
+  // Footer Kontakt link — SK → kotlik.sk/kontakty, CZ → levnekotliky.cz/kontakty
+  const navContactEl = document.getElementById('navContact');
+  if (navContactEl) {
+    navContactEl.href = lang === 'cs'
+      ? 'https://www.levnekotliky.cz/kontakty'
+      : 'https://www.kotlik.sk/kontakty';
+  }
   document.getElementById('btnKotlik').href = withUTM(p.kotlik, 'cta_kotlik');
   document.getElementById('btnKotlina').href = withUTM(p.kotlina, 'cta_kotlina');
   document.getElementById('btnSupravy').href = withUTM(p.supravy, 'cta_supravy');
