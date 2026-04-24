@@ -1,22 +1,110 @@
+# =====================================================
+# Gulášová Kalkulačka — robots.txt
+# https://gulasovakalkulacka.sk  |  https://gulasovakalkulacka.cz
+# =====================================================
+
 User-agent: *
 Allow: /
 
-# Sitemapy pre obe domény
+# ----- Sitemapy pre obe domény -----
 Sitemap: https://gulasovakalkulacka.sk/sitemap.xml
 Sitemap: https://gulasovakalkulacka.cz/sitemap.xml
 
-# Zakázať crawling výsledkov s parametrami (aby sa neduplikoval obsah)
-Disallow: /*?*
+# ----- Blokovať tracking parametre (ale povoliť ?recipe= pre PWA shortcuts) -----
+Disallow: /*utm_*
+Disallow: /*?utm_
+Disallow: /*&utm_
+Disallow: /*fbclid*
+Disallow: /*gclid*
+Disallow: /*yclid*
+Disallow: /*mc_cid*
+Disallow: /*mc_eid*
+Disallow: /*ref=*
+Disallow: /*source=*
 
-# AI crawlers — explicitne povoliť (pre indexáciu v AI search)
+# ----- Povoliť kľúčové URL parametre -----
+Allow: /?recipe=*
+Allow: /sw.js
+Allow: /manifest.json
+Allow: /*.css
+Allow: /*.js
+Allow: /*.webp
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.jpg
+
+# =====================================================
+# AI crawlers — explicitne povoliť pre indexáciu v AI search
+# =====================================================
+
 User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ----- Klasické search bots - explicit allow -----
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Seznam
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+# Seznam je dôležitý pre český trh!

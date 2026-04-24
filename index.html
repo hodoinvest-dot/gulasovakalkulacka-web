@@ -1211,11 +1211,9 @@
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.15); }
   }
-  /* Zobraz iba na mobile */
+  /* Sticky CTA vypnutý — zavadzal a prekrýval obsah na mobile */
   @media (max-width: 720px) {
-    .sticky-cta { display: flex; }
-    /* Back-to-top posuň trocha vyššie aby nekolidoval s sticky CTA */
-    .back-to-top { bottom: 80px; }
+    .sticky-cta { display: none !important; }
   }
   /* Pri tlači skry obidva */
   @media print {

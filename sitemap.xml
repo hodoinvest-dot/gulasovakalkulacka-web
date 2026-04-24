@@ -1,91 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ============================================================
+       GULÁŠOVÁ KALKULAČKA — Sitemap
+       Pozn.: Google v sitemape ignoruje URL fragmenty (#section),
+       preto uvádzame len čisté canonical URLs + hreflang.
+       ============================================================ -->
 
   <!-- ============= SLOVENSKÁ VERZIA ============= -->
   <url>
     <loc>https://gulasovakalkulacka.sk/</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-24T10:00:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/"/>
+    <xhtml:link rel="alternate" hreflang="sk-SK" href="https://gulasovakalkulacka.sk/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/"/>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://gulasovakalkulacka.cz/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gulasovakalkulacka.sk/"/>
+    <image:image>
+      <image:loc>https://gulasovakalkulacka.sk/og-cover-sk.jpg</image:loc>
+      <image:title>Gulášová kalkulačka — výpočet surovín pre guláš v kotlíku</image:title>
+      <image:caption>Presný kalkulátor surovín pre kotlíkový guláš — 11 receptov, nákupný zoznam, timeline varenia.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gulasovakalkulacka.sk/icon-512.png</image:loc>
+      <image:title>Gulášová Kalkulačka — PWA ikona</image:title>
+    </image:image>
   </url>
 
+  <!-- PWA shortcut — Hovädzí guláš -->
   <url>
-    <loc>https://gulasovakalkulacka.sk/#faq</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/#faq"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/#faq"/>
-  </url>
-
-  <url>
-    <loc>https://gulasovakalkulacka.sk/#kotliky</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/#kotliky"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/#kotliky"/>
-  </url>
-
-  <url>
-    <loc>https://gulasovakalkulacka.sk/#timelineSection</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://gulasovakalkulacka.sk/?recipe=hovadzi</loc>
+    <lastmod>2026-04-24T10:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/?recipe=hovadzi"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/?recipe=hovadzi"/>
   </url>
 
+  <!-- PWA shortcut — Poľovnícky guláš -->
   <url>
-    <loc>https://gulasovakalkulacka.sk/#partneri</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://gulasovakalkulacka.sk/?recipe=polovnicky</loc>
+    <lastmod>2026-04-24T10:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/?recipe=polovnicky"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/?recipe=polovnicky"/>
   </url>
 
   <!-- ============= ČESKÁ VERZIA ============= -->
   <url>
     <loc>https://gulasovakalkulacka.cz/</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-24T10:00:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/"/>
+    <xhtml:link rel="alternate" hreflang="sk-SK" href="https://gulasovakalkulacka.sk/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/"/>
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://gulasovakalkulacka.cz/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gulasovakalkulacka.sk/"/>
+    <image:image>
+      <image:loc>https://gulasovakalkulacka.cz/og-cover-cz.jpg</image:loc>
+      <image:title>Gulášová kalkulačka — výpočet surovin pro guláš v kotlíku</image:title>
+      <image:caption>Přesný kalkulátor surovin pro kotlíkový guláš — 11 receptů, nákupní seznam, timeline vaření.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gulasovakalkulacka.cz/icon-512.png</image:loc>
+      <image:title>Gulášová Kalkulačka — PWA ikona</image:title>
+    </image:image>
   </url>
 
+  <!-- PWA shortcut — Hovězí guláš -->
   <url>
-    <loc>https://gulasovakalkulacka.cz/#faq</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/#faq"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/#faq"/>
-  </url>
-
-  <url>
-    <loc>https://gulasovakalkulacka.cz/#kotliky</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/#kotliky"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/#kotliky"/>
-  </url>
-
-  <url>
-    <loc>https://gulasovakalkulacka.cz/#timelineSection</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://gulasovakalkulacka.cz/?recipe=hovadzi</loc>
+    <lastmod>2026-04-24T10:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/?recipe=hovadzi"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/?recipe=hovadzi"/>
   </url>
 
+  <!-- PWA shortcut — Myslivecký guláš -->
   <url>
-    <loc>https://gulasovakalkulacka.cz/#partneri</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://gulasovakalkulacka.cz/?recipe=polovnicky</loc>
+    <lastmod>2026-04-24T10:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/?recipe=polovnicky"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/?recipe=polovnicky"/>
   </url>
 
 </urlset>
