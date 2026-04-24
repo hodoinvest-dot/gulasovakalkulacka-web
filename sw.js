@@ -1,9 +1,9 @@
 /* Service Worker — Gulášová Kalkulačka
  * Offline-first caching pre PWA
- * Verzia: 3.0.0 — fix sticky CTA na mobile + cache bump
+ * Verzia: 4.0.0 — schema.org fix (Recipe image/author/datePublished + FAQ dedupe)
  */
 
-const CACHE_NAME = 'gulas-kalk-v3';
+const CACHE_NAME = 'gulas-kalk-v4';
 
 /* Statické core aktíva — pre-cachované pri inštalácii */
 const CORE_ASSETS = [

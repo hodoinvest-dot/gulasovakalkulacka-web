@@ -58,17 +58,38 @@
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "Hovädzí kotlíkový guláš",
-  "description": "Tradičný slovenský kotlíkový guláš z hovädzej glejovky, cibule, sladkej papriky a zemiakov.",
+  "image": [
+    "https://gulasovakalkulacka.sk/og-image-sk.jpg",
+    "https://gulasovakalkulacka.sk/hero-kotlik.jpg",
+    "https://gulasovakalkulacka.sk/hero-kotlik.webp"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "Gulášová Kalkulačka",
+    "url": "https://gulasovakalkulacka.sk"
+  },
+  "datePublished": "2026-04-22",
+  "dateModified": "2026-04-24",
+  "description": "Tradičný slovenský kotlíkový guláš z hovädzej glejovky, cibule, sladkej papriky a zemiakov. Recept pre 10 porcií s krokmi varenia v kotlíku na ohni.",
   "recipeCategory": "Hlavné jedlo",
   "recipeCuisine": "Slovenská",
-  "keywords": "guláš, kotlíkový guláš, hovädzí guláš, recept",
+  "keywords": "guláš, kotlíkový guláš, hovädzí guláš, recept, kotlík",
   "prepTime": "PT30M",
   "cookTime": "PT4H",
   "totalTime": "PT4H30M",
   "recipeYield": "10 porcií",
+  "suitableForDiet": "https://schema.org/GlutenFreeDiet",
   "nutrition": {
     "@type": "NutritionInformation",
-    "calories": "520 kcal"
+    "servingSize": "450 g",
+    "calories": "520 kcal",
+    "proteinContent": "38 g",
+    "fatContent": "28 g",
+    "saturatedFatContent": "11 g",
+    "carbohydrateContent": "25 g",
+    "fiberContent": "4 g",
+    "sugarContent": "6 g",
+    "sodiumContent": "780 mg"
   },
   "recipeIngredient": [
     "2,5 kg hovädzia glejovka",
@@ -80,18 +101,20 @@
     "bobkový list, cesnak"
   ],
   "recipeInstructions": [
-    {"@type": "HowToStep", "text": "Mäso pokrájaj na kocky 3×3 cm."},
-    {"@type": "HowToStep", "text": "Cibuľu nakrájaj najemno a opekaj na masti 12-15 min do zlatohneda."},
-    {"@type": "HowToStep", "text": "Pridaj mäso, opekaj 8-10 min do zatiahnutia."},
-    {"@type": "HowToStep", "text": "Odstav z ohňa, pridaj papriku, ihneď zalej vodou (paprika nesmie zhorknúť!)."},
-    {"@type": "HowToStep", "text": "Pridaj rascu, majoránku, cesnak, bobkový list. Duš 2-3 hodiny."},
-    {"@type": "HowToStep", "text": "Posledných 25-30 min pridaj zemiaky."},
-    {"@type": "HowToStep", "text": "Dosoľ, podávaj s chlebom alebo knedľou."}
+    {"@type": "HowToStep", "name": "Príprava mäsa", "text": "Mäso pokrájaj na kocky 3×3 cm."},
+    {"@type": "HowToStep", "name": "Opekanie cibule", "text": "Cibuľu nakrájaj najemno a opekaj na masti 12-15 min do zlatohneda."},
+    {"@type": "HowToStep", "name": "Opekanie mäsa", "text": "Pridaj mäso, opekaj 8-10 min do zatiahnutia."},
+    {"@type": "HowToStep", "name": "Pridanie papriky", "text": "Odstav z ohňa, pridaj papriku, ihneď zalej vodou (paprika nesmie zhorknúť!)."},
+    {"@type": "HowToStep", "name": "Koreniny a dusenie", "text": "Pridaj rascu, majoránku, cesnak, bobkový list. Duš 2-3 hodiny."},
+    {"@type": "HowToStep", "name": "Zemiaky", "text": "Posledných 25-30 min pridaj zemiaky."},
+    {"@type": "HowToStep", "name": "Dochutenie a servírovanie", "text": "Dosoľ, podávaj s chlebom alebo knedľou."}
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "247"
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
   }
 }
 </script>
@@ -129,14 +152,13 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Gulášová kalkulačka",
+      "name": "Domov",
       "item": "https://gulasovakalkulacka.sk/"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Kotlíkový guláš — kalkulačka surovín a ceny",
-      "item": "https://gulasovakalkulacka.sk/"
+      "name": "Kotlíkový guláš — kalkulačka surovín a ceny"
     }
   ]
 }
@@ -1443,38 +1465,38 @@
     </ul>
 
     <h2 id="seoH2_2"><a id="faq" aria-hidden="true"></a>Často kladené otázky (FAQ)</h2>
-    <div itemscope itemtype="https://schema.org/FAQPage">
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-question" id="faqQ1" itemprop="name">Koľko mäsa potrebujem na guláš pre 20 ľudí?</div>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer"><p id="faqA1" itemprop="text">Na hovädzí kotlíkový guláš pre 20 ľudí potrebuješ cca 5 kg hovädzej glejovky alebo pleca. Plus 5 kg cibule (pomer 1:1), 4 kg zemiakov a 160 g mletej papriky.</p></div>
+    <div class="faq-list">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question" id="faqQ1">Koľko mäsa potrebujem na guláš pre 20 ľudí?</div>
+        <div class="faq-answer"><p id="faqA1">Na hovädzí kotlíkový guláš pre 20 ľudí potrebuješ cca 5 kg hovädzej glejovky alebo pleca. Plus 5 kg cibule (pomer 1:1), 4 kg zemiakov a 160 g mletej papriky.</p></div>
       </div>
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-question" id="faqQ2" itemprop="name">Aký veľký kotlík potrebujem pre 30 ľudí?</div>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer"><p id="faqA2" itemprop="text">Pre 30 ľudí odporúčame 20-25 litrový kotlík. Kotlík musí byť minimálne 1,3× väčší ako objem jedla, aby mal guláš priestor na var a neprekypoval.</p></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question" id="faqQ2">Aký veľký kotlík potrebujem pre 30 ľudí?</div>
+        <div class="faq-answer"><p id="faqA2">Pre 30 ľudí odporúčame 20-25 litrový kotlík. Kotlík musí byť minimálne 1,3× väčší ako objem jedla, aby mal guláš priestor na var a neprekypoval.</p></div>
       </div>
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-question" id="faqQ3" itemprop="name">Ako dlho sa varí kotlíkový guláš?</div>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer"><p id="faqA3" itemprop="text">Hovädzí guláš potrebuje 3,5-4 hodiny. Bravčový 2-2,5 hodiny. Divina 4-5 hodín. Polievky (česnečka, bramboračka) 45-60 minút. Dlhé varenie je tajomstvo chuti — čím dlhšie, tým lepšie (do rozumnej miery).</p></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question" id="faqQ3">Ako dlho sa varí kotlíkový guláš?</div>
+        <div class="faq-answer"><p id="faqA3">Hovädzí guláš potrebuje 3,5-4 hodiny. Bravčový 2-2,5 hodiny. Divina 4-5 hodín. Polievky (česnečka, bramboračka) 45-60 minút. Dlhé varenie je tajomstvo chuti — čím dlhšie, tým lepšie (do rozumnej miery).</p></div>
       </div>
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-question" id="faqQ4" itemprop="name">Kedy pridať zemiaky do gulášu?</div>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer"><p id="faqA4" itemprop="text">Zemiaky pridávaj až posledných 25-30 minút varenia, inak sa rozvaria. Ak je guláš riedky, pár kociek zemiakov rozmixuj naspäť — zahustí ho prirodzene bez potreby múky.</p></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question" id="faqQ4">Kedy pridať zemiaky do gulášu?</div>
+        <div class="faq-answer"><p id="faqA4">Zemiaky pridávaj až posledných 25-30 minút varenia, inak sa rozvaria. Ak je guláš riedky, pár kociek zemiakov rozmixuj naspäť — zahustí ho prirodzene bez potreby múky.</p></div>
       </div>
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-question" id="faqQ5" itemprop="name">Prečo zhorkne paprika v guláši?</div>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer"><p id="faqA5" itemprop="text">Paprika zhorkne, ak ju pridáš na príliš horúci tuk. Vždy stiahni kotlík z ohňa, pridaj papriku a IHNEĎ zalej vodou alebo vývarom. Paprika sa nesmie "dusiť" v tuku viac ako 5 sekúnd.</p></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question" id="faqQ5">Prečo zhorkne paprika v guláši?</div>
+        <div class="faq-answer"><p id="faqA5">Paprika zhorkne, ak ju pridáš na príliš horúci tuk. Vždy stiahni kotlík z ohňa, pridaj papriku a IHNEĎ zalej vodou alebo vývarom. Paprika sa nesmie "dusiť" v tuku viac ako 5 sekúnd.</p></div>
       </div>
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-question" id="faqQ6" itemprop="name">Aký kotlík je najlepší — liatina, nerez, smalt alebo meď?</div>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer"><p id="faqA6" itemprop="text">Liatina je kráľ — drží teplo najdlhšie, guláš sa v nej neprekypí, ale je ťažká (15-kg kotlík váži cca 8 kg prázdny). Smalt je univerzálny a lacný, ale krehký. Nerez sa rýchlo zahreje, ale má tenké dno a husté guláše v ňom prihárajú. Meď je profi voľba na halászlé, ale drahá a náročná na údržbu.</p></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question" id="faqQ6">Aký kotlík je najlepší — liatina, nerez, smalt alebo meď?</div>
+        <div class="faq-answer"><p id="faqA6">Liatina je kráľ — drží teplo najdlhšie, guláš sa v nej neprekypí, ale je ťažká (15-kg kotlík váži cca 8 kg prázdny). Smalt je univerzálny a lacný, ale krehký. Nerez sa rýchlo zahreje, ale má tenké dno a husté guláše v ňom prihárajú. Meď je profi voľba na halászlé, ale drahá a náročná na údržbu.</p></div>
       </div>
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-question" id="faqQ7" itemprop="name">Koľko dreva potrebujem na varenie v kotlíku?</div>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer"><p id="faqA7" itemprop="text">Rátaj s cca 0,4 kg tvrdého dreva (buk, dub) na 1 liter jedla pri 3-4 hodinovom varení. Pre 20-litrový kotlík potrebuješ 8-10 kg dreva + rezerva. Mäkké drevo (smrek, borovica) horí rýchlo a dáva málo uhlíkov — nepoužívaj ho.</p></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question" id="faqQ7">Koľko dreva potrebujem na varenie v kotlíku?</div>
+        <div class="faq-answer"><p id="faqA7">Rátaj s cca 0,4 kg tvrdého dreva (buk, dub) na 1 liter jedla pri 3-4 hodinovom varení. Pre 20-litrový kotlík potrebuješ 8-10 kg dreva + rezerva. Mäkké drevo (smrek, borovica) horí rýchlo a dáva málo uhlíkov — nepoužívaj ho.</p></div>
       </div>
-      <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-question" id="faqQ8" itemprop="name">Potrebujem k kotlíku aj horák? Kedy sa oplatí kúpiť?</div>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer"><p id="faqA8" itemprop="text"><strong>Kedy sa horák oplatí:</strong> keď nemáš priestor na otvorený oheň (balkón, terasa, dvor bez ohniska), chceš rýchly štart (kotlík je horúci za 2 minúty namiesto 20 minút s drevom) alebo potrebuješ presnú kontrolu teploty pri hustých gulášoch.<br><br><strong>Aký horák vybrať podľa veľkosti kotlíka:</strong><br>• <strong>Kotlík do 20 L</strong> → <a href="https://www.kotlik.sk/plynovy-horak-hu-5-5-kw-pripojovacie-prislusenstvo" target="_blank" rel="sponsored noopener">Plynový horák HU 5,5 kW</a> — kompaktný, ekonomický<br>• <strong>Kotlík 20–100 L</strong> → <a href="https://www.kotlik.sk/liatinovy-plynovy-varic-horak-7-5-kw-hu-pripojovacie-prislusenstvo" target="_blank" rel="sponsored noopener">Liatinový horák 7,5 kW HU</a> (univerzál) alebo silnejší trojprstencový <a href="https://www.kotlik.sk/liatinovy-plynovy-varic-8-8-kw-3p-ghisa-tlakova-hadica-1-5-m-regulator-30-mbar-2-hadicove-spony" target="_blank" rel="sponsored noopener">Ghisa 8,8 kW 3P</a> (rýchlejšie rozpálenie a dobre zvláda vietor)<br><br><strong>V balení dostaneš všetko:</strong> tlakovú hadicu na propán-bután (1,5 m), regulátor tlaku 30 mbar a 2 hadicové spony — nič nemusíš dokupovať. Tip profíka: horák na rozpálenie, drevo na dotiahnutie = chuť dymu + pohodlie.</p></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question" id="faqQ8">Potrebujem k kotlíku aj horák? Kedy sa oplatí kúpiť?</div>
+        <div class="faq-answer"><p id="faqA8"><strong>Kedy sa horák oplatí:</strong> keď nemáš priestor na otvorený oheň (balkón, terasa, dvor bez ohniska), chceš rýchly štart (kotlík je horúci za 2 minúty namiesto 20 minút s drevom) alebo potrebuješ presnú kontrolu teploty pri hustých gulášoch.<br><br><strong>Aký horák vybrať podľa veľkosti kotlíka:</strong><br>• <strong>Kotlík do 20 L</strong> → <a href="https://www.kotlik.sk/plynovy-horak-hu-5-5-kw-pripojovacie-prislusenstvo" target="_blank" rel="sponsored noopener">Plynový horák HU 5,5 kW</a> — kompaktný, ekonomický<br>• <strong>Kotlík 20–100 L</strong> → <a href="https://www.kotlik.sk/liatinovy-plynovy-varic-horak-7-5-kw-hu-pripojovacie-prislusenstvo" target="_blank" rel="sponsored noopener">Liatinový horák 7,5 kW HU</a> (univerzál) alebo silnejší trojprstencový <a href="https://www.kotlik.sk/liatinovy-plynovy-varic-8-8-kw-3p-ghisa-tlakova-hadica-1-5-m-regulator-30-mbar-2-hadicove-spony" target="_blank" rel="sponsored noopener">Ghisa 8,8 kW 3P</a> (rýchlejšie rozpálenie a dobre zvláda vietor)<br><br><strong>V balení dostaneš všetko:</strong> tlakovú hadicu na propán-bután (1,5 m), regulátor tlaku 30 mbar a 2 hadicové spony — nič nemusíš dokupovať. Tip profíka: horák na rozpálenie, drevo na dotiahnutie = chuť dymu + pohodlie.</p></div>
       </div>
     </div>
 
