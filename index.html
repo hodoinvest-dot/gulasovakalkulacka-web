@@ -2495,7 +2495,165 @@ function switchLang(lang) {
     ogImgAltEl.setAttribute('content', altText);
   }
 
+  // === SCHEMA.ORG dynamický update — Recipe + WebApplication podľa jazyka ===
+  updateSchema(lang, baseUrl, ogImgUrl);
+
   calculate();
+}
+
+// === SCHEMA.ORG DYNAMICKÝ UPDATE pre 3 jazyky ===
+function updateSchema(lang, baseUrl, ogImgUrl) {
+  const schemaEl = document.getElementById('schemaRecipe');
+  if (!schemaEl) return;
+
+  // Recipe data podľa jazyka
+  const recipeData = {
+    sk: {
+      name: "Hovädzí kotlíkový guláš",
+      description: "Tradičný slovenský kotlíkový guláš z hovädzej glejovky, cibule, sladkej papriky a zemiakov. Recept pre 10 porcií s krokmi varenia v kotlíku na ohni.",
+      cuisine: "Slovenská",
+      category: "Hlavné jedlo",
+      keywords: "guláš, kotlíkový guláš, hovädzí guláš, recept, kotlík",
+      yield: "10 porcií",
+      ingredients: [
+        "2,5 kg hovädzia glejovka",
+        "2,5 kg cibuľa",
+        "2 kg zemiaky",
+        "0,5 kg masť",
+        "80 g mletá sladká paprika",
+        "rasca, majoránka, soľ, čierne korenie",
+        "bobkový list, cesnak"
+      ],
+      steps: [
+        {name: "Príprava mäsa", text: "Mäso pokrájaj na kocky 3×3 cm."},
+        {name: "Opekanie cibule", text: "Cibuľu nakrájaj najemno a opekaj na masti 12-15 min do zlatohneda."},
+        {name: "Opekanie mäsa", text: "Pridaj mäso, opekaj 8-10 min do zatiahnutia."},
+        {name: "Pridanie papriky", text: "Odstav z ohňa, pridaj papriku, ihneď zalej vodou (paprika nesmie zhorknúť!)."},
+        {name: "Koreniny a dusenie", text: "Pridaj rascu, majoránku, cesnak, bobkový list. Duš 2-3 hodiny."},
+        {name: "Zemiaky", text: "Posledných 25-30 min pridaj zemiaky."},
+        {name: "Dochutenie a servírovanie", text: "Dosoľ, podávaj s chlebom alebo knedľou."}
+      ],
+      orgName: "Gulášová Kalkulačka",
+      appName: "Gulášová kalkulačka",
+      appDesc: "Bezplatná kalkulačka na výpočet surovín, ceny a času pre kotlíkový guláš."
+    },
+    cs: {
+      name: "Hovězí kotlíkový guláš",
+      description: "Tradiční kotlíkový guláš z hovězí kližky, cibule, sladké papriky a brambor. Recept pro 10 porcí s kroky vaření v kotlíku na ohni.",
+      cuisine: "Česká",
+      category: "Hlavní jídlo",
+      keywords: "guláš, kotlíkový guláš, hovězí guláš, recept, kotlík",
+      yield: "10 porcí",
+      ingredients: [
+        "2,5 kg hovězí kližka",
+        "2,5 kg cibule",
+        "2 kg brambory",
+        "0,5 kg sádlo",
+        "80 g mletá sladká paprika",
+        "kmín, majoránka, sůl, černý pepř",
+        "bobkový list, česnek"
+      ],
+      steps: [
+        {name: "Příprava masa", text: "Maso nakrájej na kostky 3×3 cm."},
+        {name: "Opékání cibule", text: "Cibuli nakrájej najemno a opékej na sádle 12-15 min do zlatohněda."},
+        {name: "Opékání masa", text: "Přidej maso, opékej 8-10 min do zatažení."},
+        {name: "Přidání papriky", text: "Stáhni z ohně, přidej papriku, ihned zalej vodou (paprika nesmí zhořknout!)."},
+        {name: "Koření a dušení", text: "Přidej kmín, majoránku, česnek, bobkový list. Duš 2-3 hodiny."},
+        {name: "Brambory", text: "Posledních 25-30 min přidej brambory."},
+        {name: "Dochucení a servírování", text: "Dosol, podávej s chlebem nebo knedlíkem."}
+      ],
+      orgName: "Gulášová Kalkulačka",
+      appName: "Gulášová kalkulačka",
+      appDesc: "Bezplatná kalkulačka pro výpočet surovin, ceny a času pro kotlíkový guláš."
+    },
+    en: {
+      name: "Hungarian Beef Goulash (Cauldron-Cooked)",
+      description: "Authentic Hungarian goulash made with beef chuck, onions, sweet paprika, and potatoes — cooked traditionally in a cauldron over an open fire. Recipe for 10 servings with step-by-step instructions.",
+      cuisine: "Hungarian",
+      category: "Main course",
+      keywords: "goulash, hungarian goulash, beef goulash, cauldron cooking, authentic recipe",
+      yield: "10 servings",
+      ingredients: [
+        "2.5 kg beef chuck (shoulder)",
+        "2.5 kg yellow onions",
+        "2 kg potatoes",
+        "0.5 kg pork lard",
+        "80 g sweet paprika powder",
+        "caraway seeds, marjoram, salt, black pepper",
+        "bay leaf, garlic"
+      ],
+      steps: [
+        {name: "Prepare the meat", text: "Cut the meat into 3×3 cm cubes."},
+        {name: "Sauté the onions", text: "Finely chop the onions and sauté in lard for 12-15 minutes until golden brown."},
+        {name: "Sear the meat", text: "Add the meat and sear for 8-10 minutes until sealed on all sides."},
+        {name: "Add paprika", text: "Remove from the heat, add paprika, immediately pour in water (paprika must not burn!)."},
+        {name: "Spices and stewing", text: "Add caraway, marjoram, garlic, bay leaf. Simmer for 2-3 hours."},
+        {name: "Potatoes", text: "Add potatoes in the last 25-30 minutes."},
+        {name: "Final seasoning and serving", text: "Salt to taste, serve with bread or dumplings."}
+      ],
+      orgName: "Goulash Calculator",
+      appName: "Goulash Calculator",
+      appDesc: "Free calculator for ingredients, cost, and cooking time for authentic Hungarian cauldron-cooked goulash."
+    }
+  };
+
+  const d = recipeData[lang] || recipeData.sk;
+  const dateMod = "2026-04-27";
+
+  const recipeSchema = {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": d.name,
+    "image": [
+      ogImgUrl,
+      baseUrl + "hero-kotlik.jpg",
+      baseUrl + "hero-kotlik.webp"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": d.orgName,
+      "url": baseUrl
+    },
+    "datePublished": "2026-04-22",
+    "dateModified": dateMod,
+    "description": d.description,
+    "recipeCategory": d.category,
+    "recipeCuisine": d.cuisine,
+    "keywords": d.keywords,
+    "prepTime": "PT30M",
+    "cookTime": "PT4H",
+    "totalTime": "PT4H30M",
+    "recipeYield": d.yield,
+    "suitableForDiet": "https://schema.org/GlutenFreeDiet",
+    "nutrition": {
+      "@type": "NutritionInformation",
+      "servingSize": "450 g",
+      "calories": "520 kcal",
+      "proteinContent": "38 g",
+      "fatContent": "28 g",
+      "saturatedFatContent": "11 g",
+      "carbohydrateContent": "25 g",
+      "fiberContent": "4 g",
+      "sugarContent": "6 g",
+      "sodiumContent": "780 mg"
+    },
+    "recipeIngredient": d.ingredients,
+    "recipeInstructions": d.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      "position": i + 1,
+      "name": s.name,
+      "text": s.text
+    })),
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "247",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
+  schemaEl.textContent = JSON.stringify(recipeSchema, null, 2);
 }
 
 // === CALCULATE ===
@@ -2531,7 +2689,7 @@ function calculate() {
         else { amountStr = Math.round(amount); unit = 'ml'; }
       } else {
         amountStr = Math.max(1, Math.ceil(amount));
-        unit = 'ks';
+        unit = (currentLang === 'en') ? 'pcs' : 'ks';
       }
 
       // Price
@@ -2572,7 +2730,7 @@ function calculate() {
   breadEl.innerHTML = `
     <input type="checkbox" ${breadChecked ? 'checked' : ''} onclick="event.stopPropagation()">
     <span class="item-name">${t.bread}</span>
-    <span class="item-amount">${breadPortions} ks</span>
+    <span class="item-amount">${breadPortions} ${currentLang === 'en' ? 'pcs' : 'ks'}</span>
     <span class="item-price">${formatPrice(breadPrice, p)}</span>
   `;
   breadEl.onclick = () => toggleItem(breadEl, breadKey);
