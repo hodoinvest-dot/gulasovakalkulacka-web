@@ -1442,9 +1442,9 @@
   <section class="kettle-section" id="kotliky">
     <h3 id="lblKettle">🏺 Odporúčaná veľkosť kotlíka</h3>
     <figure>
-      <picture>
-        <source srcset="kotliky-porovnanie.webp" type="image/webp">
-        <img src="kotliky-porovnanie.jpg" alt="Porovnanie veľkostí kotlíkov pre guláš — 5 L pre 4–6 ľudí, 15 L pre 15–25 ľudí, 30 L pre 40–50 ľudí, 80 L pre 100–120 ľudí" class="inline-image" width="1774" height="887" loading="lazy">
+      <picture id="kotlikyPicture">
+        <source id="kotlikySrcWebp" srcset="kotliky-porovnanie.webp" type="image/webp">
+        <img id="kotlikyImg" src="kotliky-porovnanie.jpg" alt="Porovnanie veľkostí kotlíkov pre guláš — 5 L pre 4–6 ľudí, 15 L pre 15–25 ľudí, 30 L pre 40–50 ľudí, 80 L pre 100–120 ľudí" class="inline-image" width="1774" height="887" loading="lazy">
       </picture>
       <figcaption id="kettleCaption">Pravidlo: kotlík musí byť min. 1,3× väčší ako objem jedla</figcaption>
     </figure>
@@ -2493,6 +2493,23 @@ function switchLang(lang) {
     if (lang === 'en') altText = 'Goulash Calculator — accurate ingredient calculation for cauldron-cooked Hungarian goulash';
     else if (lang === 'cs') altText = 'Gulášová kalkulačka — přesný výpočet surovin pro kotlíkový guláš';
     ogImgAltEl.setAttribute('content', altText);
+  }
+
+  // === Kotliky-porovnanie obrázok — EN má vlastnú verziu s anglickým textom ===
+  const kotlikyImg = document.getElementById('kotlikyImg');
+  const kotlikySrcWebp = document.getElementById('kotlikySrcWebp');
+  if (kotlikyImg && kotlikySrcWebp) {
+    if (lang === 'en') {
+      kotlikyImg.src = 'kotliky-porovnanie-en.jpg';
+      kotlikySrcWebp.srcset = 'kotliky-porovnanie-en.webp';
+      kotlikyImg.alt = 'Comparison of cauldron sizes for goulash — 5 L for 4-6 people, 15 L for 15-25 people, 30 L for 40-50 people, 80 L for 100-120 people';
+    } else {
+      kotlikyImg.src = 'kotliky-porovnanie.jpg';
+      kotlikySrcWebp.srcset = 'kotliky-porovnanie.webp';
+      kotlikyImg.alt = (lang === 'cs')
+        ? 'Porovnání velikostí kotlíků pro guláš — 5 L pro 4–6 lidí, 15 L pro 15–25 lidí, 30 L pro 40–50 lidí, 80 L pro 100–120 lidí'
+        : 'Porovnanie veľkostí kotlíkov pre guláš — 5 L pre 4–6 ľudí, 15 L pre 15–25 ľudí, 30 L pre 40–50 ľudí, 80 L pre 100–120 ľudí';
+    }
   }
 
   // === SCHEMA.ORG dynamický update — Recipe + WebApplication podľa jazyka ===
