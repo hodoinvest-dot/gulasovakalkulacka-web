@@ -4,7 +4,9 @@
 # Presmeruj www.* → apex doménu (kanonická verzia)
 https://www.gulasovakalkulacka.sk/* https://gulasovakalkulacka.sk/:splat 301
 https://www.gulasovakalkulacka.cz/* https://gulasovakalkulacka.cz/:splat 301
+https://www.goulashcalculator.com/* https://goulashcalculator.com/:splat 301
 
 # Force HTTPS (Cloudflare to robí automaticky, ale explicitne je istejšie)
 http://gulasovakalkulacka.sk/* https://gulasovakalkulacka.sk/:splat 301
 http://gulasovakalkulacka.cz/* https://gulasovakalkulacka.cz/:splat 301
+http://goulashcalculator.com/* https://goulashcalculator.com/:splat 301

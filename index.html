@@ -25,7 +25,10 @@
 <!-- === HREFLANG === -->
 <link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/">
 <link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/">
-<link rel="alternate" hreflang="x-default" href="https://gulasovakalkulacka.sk/">
+<link rel="alternate" hreflang="en" href="https://goulashcalculator.com/">
+<link rel="alternate" hreflang="en-GB" href="https://goulashcalculator.com/">
+<link rel="alternate" hreflang="en-US" href="https://goulashcalculator.com/">
+<link rel="alternate" hreflang="x-default" href="https://goulashcalculator.com/">
 
 <!-- === OPEN GRAPH === -->
 <meta property="og:type" content="website">
@@ -40,6 +43,8 @@
 <meta name="twitter:image" id="twImage" content="https://gulasovakalkulacka.sk/og-image-sk.jpg">
 <meta property="og:locale" content="sk_SK">
 <meta property="og:locale:alternate" content="cs_CZ">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="en_US">
 
 <!-- === TWITTER CARD === -->
 <meta name="twitter:card" content="summary_large_image">
@@ -1252,19 +1257,24 @@
 </style>
 
 <!-- === PLAUSIBLE ANALYTICS === privacy-first, žiadne cookies, žiadny banner -->
-<!-- Doménu si v Plausible registrácii nahradíš: gulasovakalkulacka.sk + gulasovakalkulacka.cz -->
-<script defer data-domain="gulasovakalkulacka.sk,gulasovakalkulacka.cz" src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>
+<!-- Plausible analytics — všetky 3 domény -->
+<script defer data-domain="gulasovakalkulacka.sk,gulasovakalkulacka.cz,goulashcalculator.com" src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>
 <script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
 
 <!-- === MICROSOFT CLARITY === heatmaps + session recordings + AI insights (free, GDPR-friendly) -->
-<!-- Auto-detekcia domény: SK projekt = whpxbvu509 | CZ projekt = whpyeqxddp -->
+<!-- Auto-detekcia domény: SK = whpxbvu509 | CZ = whpyeqxddp | EN (.com) = wi4osf58zd -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script",
-       window.location.hostname.includes('.cz') ? 'whpyeqxddp' : 'whpxbvu509'
+       (function(){
+         var h = window.location.hostname;
+         if (h.indexOf('.com') !== -1) return 'wi4osf58zd';   // EN — goulashcalculator.com
+         if (h.indexOf('.cz')  !== -1) return 'whpyeqxddp';   // CZ — gulasovakalkulacka.cz
+         return 'whpxbvu509';                                  // SK — gulasovakalkulacka.sk (default)
+       })()
     );
 </script>
 </head>
@@ -1293,6 +1303,19 @@
           <path d="M0 0 L4.5 3 L0 6 z" fill="#11457E"/>
         </svg>
         <span>CZ</span>
+      </button>
+      <button class="flag-btn" data-lang="en" onclick="switchLang('en')" aria-label="English">
+        <svg class="flag-icon" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <clipPath id="ukf"><rect width="60" height="30"/></clipPath>
+          <rect width="60" height="30" fill="#012169"/>
+          <g clip-path="url(#ukf)">
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
+            <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
+            <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
+          </g>
+        </svg>
+        <span>EN</span>
       </button>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Prepnúť svetlý/tmavý režim" title="Svetlý/tmavý režim">
         <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1744,6 +1767,94 @@ const I18N = {
       q8: "Potřebuji ke kotlíku i hořák? Kdy se vyplatí koupit?",
       a8: "<strong>Kdy se hořák vyplatí:</strong> když nemáš prostor na otevřený oheň (balkon, terasa, dvůr bez ohniště), chceš rychlý start (kotlík je horký za 2 minuty místo 20 minut se dřevem) nebo potřebuješ přesnou kontrolu teploty u hustých gulášů.<br><br><strong>Jaký hořák vybrat podle velikosti kotlíku:</strong><br>• <strong>Kotlík do 20 L</strong> → <a href=\"https://www.levnekotliky.cz/plynovy-horak-hu-5-5-kw-pripojovaci-prislusenstvi\" target=\"_blank\" rel=\"sponsored noopener\">Plynový hořák HU 5,5 kW</a> — kompaktní, úsporný<br>• <strong>Kotlík 20–100 L</strong> → <a href=\"https://www.levnekotliky.cz/litinovy-plynovy-varic-horak-7-5-kw-hu-pripojovaci-prislusenstvi\" target=\"_blank\" rel=\"sponsored noopener\">Litinový hořák 7,5 kW HU</a> (univerzál) nebo silnější tříprstencový <a href=\"https://www.levnekotliky.cz/litinovy-plynovy-varic-8-8-kw-3p-ghisa-tlakova-hadice-1-5-m-regulator-30-mbar-2-hadicove-spony\" target=\"_blank\" rel=\"sponsored noopener\">Ghisa 8,8 kW 3P</a> (rychlejší rozpálení a lépe zvládá vítr)<br><br><strong>V balení dostaneš vše:</strong> tlakovou hadici na propan-butan (1,5 m), regulátor tlaku 30 mbar a 2 hadicové spony — nic nemusíš dokupovat. Tip profíka: hořák na rozpálení, dřevo na dotažení = chuť kouře + pohodlí."
     }
+  },
+  en: {
+    title: "Goulash Calculator 2026 — Hungarian Goulash for 10, 20, 50, 100 People | Cauldron Recipe + Shopping List",
+    desc: "The most accurate calculator for authentic cauldron-cooked Hungarian goulash. Enter the number of people and get exact meat, onion, potato, and paprika quantities, total cost, cooking time, and recommended cauldron size. 11 traditional recipes. Free, no signup, works offline.",
+    mainTitle: "Goulash Calculator",
+    tagline: "The art of fire and patience",
+    lblRecipe: "🥘 What are we cooking?",
+    lblPeople: "👥 How many people?",
+    lblPortion: "🍽️ Portion size",
+    lblMaterial: "⚒️ Cauldron material",
+    lblStatPeople: "Servings",
+    lblStatPrice: "Total cost",
+    lblStatTime: "Cooking time",
+    lblStatPot: "Cauldron",
+    listTitle: "📋 Shopping list",
+    lblTotal: "Total:",
+    priceDisclaimer: "<strong>ℹ️ Prices are estimates.</strong> Based on average UK/EU food prices for 2026. Actual cost may vary by store, season, promotions, and quality of ingredients.",
+    btnShare: "📱 Share",
+    btnCopy: "📋 Copy",
+    btnPrint: "🖨️ Print",
+    lblTimeline: "⏱️ Cooking timeline",
+    lblKettle: "🏺 Recommended cauldron size",
+    ctaTitle: "🔥 Need quality cookware?",
+    ctaSubtitle: "A proper cauldron is the foundation of legendary goulash",
+    btnKotlik: "Browse quality cauldrons",
+    stickyCtaText: "🔥 Browse quality cauldrons →",
+    btnKotlina: "I also need a stand",
+    btnSupravy: "Complete sets (save more)",
+    btnHoraky: "Gas burners for cauldrons",
+    affDisclose: "* Affiliate link — if you buy through our partner, you support us. Your price stays the same.",
+    partnerLabel: "Recommended partner:",
+    lblLiters: "We've helped cook:",
+    lblLitersUnit: "litres of goulash",
+    navFaq: "FAQ",
+    navPrivacy: "Privacy",
+    navContact: "Contact",
+    copyRights: "All rights reserved to lovers of fire",
+    cookieText: "🍪 We only use technical cookies to remember your shopping list checkmarks. No tracking, no ads.",
+    cookieAccept: "I understand",
+    cookieDecline: "Necessary only",
+    adviceLabel: "Master's tip:",
+    materialLabel: "Material note:",
+    categories: { maso: "Meat", zelenina: "Vegetables", koreniny: "Spices", ostatne: "Other", zaklad: "Base" },
+    bread: "Fresh bread",
+    perPortionText: "Cost per serving:",
+    timelineSteps: {
+      start: "Start — preparation",
+      startDesc: "Cube meat into 3×3 cm pieces, finely chop onion, prepare vegetables.",
+      heat: "Heat the fat/oil",
+      heatDesc: "Place cauldron on the fire, melt the lard or oil.",
+      onion: "Sauté the onion",
+      onionDesc: "Cook for 12-15 min until golden brown — this is the foundation of flavour!",
+      meat: "Add the meat",
+      meatDesc: "Sear for 8-10 min until sealed on all sides.",
+      paprika: "Paprika + liquid",
+      paprikaDesc: "Remove from heat, add paprika, IMMEDIATELY pour in water (paprika must not burn!).",
+      spices: "Spices and stewing",
+      spicesDesc: "Add caraway, marjoram, garlic, bay leaf. Simmer on low heat.",
+      vegetables: "Vegetables",
+      vegetablesDesc: "Add tomatoes and fresh peppers.",
+      potato: "Potatoes",
+      potatoDesc: "In the last 25-30 min.",
+      finish: "Final seasoning",
+      finishDesc: "Taste, add salt, optionally a touch of hot paprika.",
+      serve: "🔥 DONE! Serving",
+      serveDesc: "Serve with bread, dumplings, or noodles."
+    },
+    kettleTipFormat: (vol, rec) => `Food volume: ~${vol} L • Cauldron must be at least 1.3× larger • We recommend a ${rec} L cauldron.`,
+    kettleCaption: "Rule: cauldron must be at least 1.3× larger than the food volume",
+    faqTitle: "Frequently Asked Questions (FAQ)",
+    faq: {
+      q1: "How much meat do I need for goulash for 20 people?",
+      a1: "For traditional Hungarian goulash for 20 people, you'll need approximately 5 kg (11 lbs) of beef chuck or shoulder. Plus 5 kg of onions (1:1 ratio with meat), 4 kg of potatoes, and 160 g of sweet paprika.",
+      q2: "What size cauldron do I need for 30 people?",
+      a2: "For 30 people, we recommend a 20-25 litre (5-6 gallon) cauldron. The cauldron must be at least 1.3× larger than the food volume, so the goulash has room to simmer without boiling over.",
+      q3: "How long does cauldron goulash take to cook?",
+      a3: "Beef goulash needs 3.5-4 hours. Pork: 2-2.5 hours. Game meat (venison, wild boar): 4-5 hours. Soups (garlic soup, potato soup): 45-60 minutes. Long cooking is the secret of flavour — the longer, the better (within reason).",
+      q4: "When should I add potatoes to goulash?",
+      a4: "Add potatoes only in the last 25-30 minutes of cooking, or they'll turn to mush. If your goulash is too thin, blend a few potato cubes back in — it'll thicken naturally without flour.",
+      q5: "Why does paprika turn bitter in goulash?",
+      a5: "Paprika turns bitter if added to fat that's too hot. Always remove the cauldron from the heat, add paprika, and IMMEDIATELY pour in water or stock. Paprika must not 'fry' in fat for more than 5 seconds.",
+      q6: "Which cauldron is best — cast iron, stainless steel, enamel, or copper?",
+      a6: "Cast iron is king — holds heat the longest, goulash won't boil over, but it's heavy (a 15-litre cauldron weighs about 8 kg empty). Enamel is universal and affordable, but fragile. Stainless steel heats fast but has a thin bottom and thick goulashes burn. Copper is the pro choice for halászlé (fish soup), but expensive and high-maintenance.",
+      q7: "How much wood do I need for cauldron cooking?",
+      a7: "Allow about 0.4 kg of hardwood (oak, beech) per 1 litre of food for a 3-4 hour cook. For a 20-litre cauldron you'll need 8-10 kg of wood plus reserve. Softwood (pine, spruce) burns fast and gives few coals — don't use it.",
+      q8: "Do I need a gas burner for my cauldron? When is it worth buying one?",
+      a8: "<strong>When a burner is worth it:</strong> when you don't have space for an open fire (balcony, terrace, garden without a fire pit), want a quick start (cauldron is hot in 2 minutes instead of 20 with wood), or need precise temperature control for thick goulashes.<br><br><strong>Which burner to choose by cauldron size:</strong><br>• <strong>Cauldron up to 20 L</strong> → <a href=\"https://www.kotlik.sk/plynovy-horak-hu-5-5-kw-pripojovacie-prislusenstvo\" target=\"_blank\" rel=\"sponsored noopener\">5.5 kW gas burner</a> — compact, economical<br>• <strong>Cauldron 20–100 L</strong> → <a href=\"https://www.kotlik.sk/liatinovy-plynovy-varic-horak-7-5-kw-hu-pripojovacie-prislusenstvo\" target=\"_blank\" rel=\"sponsored noopener\">7.5 kW cast-iron burner</a> (universal) or stronger triple-ring <a href=\"https://www.kotlik.sk/liatinovy-plynovy-varic-8-8-kw-3p-ghisa-tlakova-hadica-1-5-m-regulator-30-mbar-2-hadicove-spony\" target=\"_blank\" rel=\"sponsored noopener\">Ghisa 8.8 kW 3P</a> (faster heat-up, better wind resistance)<br><br><strong>The package includes everything:</strong> propane-butane pressure hose (1.5 m), 30 mbar pressure regulator, and 2 hose clamps — nothing extra to buy. Pro tip: burner to start, wood to finish = smoke flavour + convenience."
+    }
   }
 };
 
@@ -1753,9 +1864,11 @@ const RECIPES = {
   hovadzi_gulas: {
     name_sk: "🐂 Hovädzí guláš (klasika)",
     name_cs: "🐂 Hovězí guláš (klasika)",
+    name_en: "🐂 Beef Goulash (the classic)",
     prepTime: 30, cookTime: 210,
     advice_sk: "Trpezlivosť je tvoja hlavná ingrediencia. Nežeň to. Keď sa mäso začne rozpadať na jazyku, pochopíš, prečo si pri tom ohni stál 4 hodiny. Pomer cibuľa:mäso drž 1:1.",
     advice_cs: "Trpělivost je tvá hlavní ingredience. Nežeň to. Až se maso začne rozpadat na jazyku, pochopíš, proč jsi u toho ohně stál 4 hodiny. Poměr cibule:maso drž 1:1.",
+    advice_en: "Patience is your main ingredient. Don't rush it. When the meat starts melting on your tongue, you'll understand why you stood by that fire for 4 hours. Keep the onion-to-meat ratio at 1:1.",
     ingredients: {
       maso: [
         { sk: "Hovädzia glejovka (plece)", cs: "Hovězí kližka (plecko)", perPortion: 250, unit: "g", pricePerKg: 14.90 }
@@ -1784,9 +1897,11 @@ const RECIPES = {
   bravcovy_gulas: {
     name_sk: "🐖 Bravčový guláš",
     name_cs: "🐖 Vepřový guláš",
+    name_en: "🐖 Pork Goulash",
     prepTime: 25, cookTime: 120,
     advice_sk: "Poctivá klasika pre celú partu. Stráž si základ — cibuľa musí byť zlatistá, nie spálená. V jednoduchosti je sila, ktorá nasýti každého. Pliecko je rýchlejšie než hovädzie, ale chuť má plnú.",
     advice_cs: "Poctivá klasika pro celou partu. Hlídej si základ — cibule musí být zlatá, ne spálená. V jednoduchosti je síla, která nasytí každého. Plecko je rychlejší než hovězí, ale chuť má plnou.",
+    advice_en: "Honest classic for the whole crew. Watch your base — onions must be golden, not burnt. Pork shoulder is faster than beef but the flavour stays rich. Splash of red wine in the last 30 minutes adds depth.",
     ingredients: {
       maso: [
         { sk: "Bravčové plece", cs: "Vepřové plecko", perPortion: 220, unit: "g", pricePerKg: 7.90 },
@@ -1816,9 +1931,11 @@ const RECIPES = {
   divina_gulas: {
     name_sk: "🦌 Guláš z diviny (poľovnícky)",
     name_cs: "🦌 Guláš z divočiny (myslivecký)",
+    name_en: "🦌 Game Goulash (hunter's style)",
     prepTime: 45, cookTime: 240,
     advice_sk: "Vôňa lesa v každej lyžici. Divina si žiada rešpekt, jalovec a štipku brusníc. Je to VIP hostina. Mäso marinuj cez noc v červenom víne, jalovec pomrv v mažiari pred pridaním.",
     advice_cs: "Vůně lesa v každé lžíci. Divočina si žádá respekt, jalovec a špetku brusinek. Je to VIP hostina. Maso marinuj přes noc v červeném víně.",
+    advice_en: "Forest aroma in every spoonful. Game meat demands respect — juniper berries and a pinch of cranberries. Marinate overnight in red wine. Don't skimp on marjoram — it cuts through the gaminess beautifully.",
     ingredients: {
       maso: [
         { sk: "Zverina (diviak/jeleň/srnec)", cs: "Zvěřina (divočák/jelen/srnec)", perPortion: 240, unit: "g", pricePerKg: 18.50 },
@@ -1852,9 +1969,11 @@ const RECIPES = {
   vegansky_gulas: {
     name_sk: "🍄 Vegánsky guláš (hliva)",
     name_cs: "🍄 Veganský guláš (hlíva)",
+    name_en: "🍄 Vegan Goulash (oyster mushrooms)",
     prepTime: 20, cookTime: 60,
     advice_sk: "Dôkaz, že oheň a dym milujú aj zeleninu. Hliva nasaje vôňu bukového dreva. Pre hustú šťavu nastrúhaj jeden zemiak najemno hneď na začiatku.",
     advice_cs: "Důkaz, že oheň a kouř milují i zeleninu. Hlíva nasaje vůni bukového dřeva. Pro hustou šťávu nastrouhej jeden brambor najemno hned na začátku.",
+    advice_en: "Proof that fire and smoke love vegetables too. Oyster mushrooms soak up the beechwood aroma. For thick gravy, finely grate one potato right at the start. Smoked paprika brings the depth you'd normally get from fat.",
     ingredients: {
       zaklad: [
         { sk: "Hliva ustricová", cs: "Hlíva ústřičná", perPortion: 250, unit: "g", pricePerKg: 12.90 },
@@ -1883,9 +2002,11 @@ const RECIPES = {
   kapustnica: {
     name_sk: "🥬 Kapustnica (slovenská tradícia)",
     name_cs: "🥬 Zelňačka (slovenská tradice)",
+    name_en: "🥬 Kapustnica (Slovak Christmas Cabbage Soup)",
     prepTime: 25, cookTime: 150,
     advice_sk: "Srdce slovenskej tradície. Keď sa spojí kyslá kapusta, domáca klobása a dym, vznikne rituál. Soliť až na konci — údeniny sú slané dosť. Ak je kapusta moc kyslá, pridaj vodu, nepremývaj.",
     advice_cs: "Srdce slovenské tradice. Když se spojí kysané zelí, domácí klobása a kouř, vznikne rituál. Solit až na konci — uzeniny jsou slané dost.",
+    advice_en: "The soul of Slovak Christmas. When sauerkraut, smoked sausage and dried mushrooms unite, a ritual is born. Salt only at the end — smoked meats are salty enough. Don't pour out the sauerkraut juice — that's where the flavour lives.",
     ingredients: {
       zaklad: [
         { sk: "Kyslá kapusta", cs: "Kysané zelí", perPortion: 220, unit: "g", pricePerKg: 2.20 },
@@ -1916,9 +2037,11 @@ const RECIPES = {
   fazulovica: {
     name_sk: "🫘 Fazuľovica s údeným",
     name_cs: "🫘 Fazolová polévka s uzeným",
+    name_en: "🫘 Bean Soup with Smoked Pork",
     prepTime: 30, cookTime: 180,
     advice_sk: "Sýty objat v miske. Poriadne údené koleno a hrejivá fazuľa — to je jedlo, ktoré vás vráti do detstva. Fazuľu namoč minimálne 8 hodín vopred, prvú vodu zlej. Pár kvapiek octu na konci rozjasní chuť.",
     advice_cs: "Sytý objat v misce. Pořádně uzené koleno a hřejivá fazole. Fazole namoč min. 8 hodin předem, první vodu slij. Pár kapek octa na konci rozjasní chuť.",
+    advice_en: "A hearty hug in a bowl. Proper smoked pork knuckle and warming beans — childhood food. Soak beans for at least 8 hours, throw out the first water. A splash of vinegar at the end brightens everything.",
     ingredients: {
       zaklad: [
         { sk: "Fazuľa suchá (namočená)", cs: "Fazole suchá (namočená)", perPortion: 90, unit: "g", pricePerKg: 3.40 },
@@ -1949,9 +2072,11 @@ const RECIPES = {
   drzkova: {
     name_sk: "🍲 Držková polievka",
     name_cs: "🍲 Dršťková polévka",
+    name_en: "🍲 Tripe Soup (Slovak Držková)",
     prepTime: 20, cookTime: 120,
     advice_sk: "Kontroverzná, ale legendárna. Priprav ju poctivo, s kopou majoránky a cesnaku. Použi predvarené držky, ušetríš pol dňa. Poriadne ich prepláchni vriacou vodou.",
     advice_cs: "Kontroverzní, ale legendární. Připrav ji poctivě, s kopou majoránky a česneku. Použij předvařené dršťky, ušetříš půl dne.",
+    advice_en: "Controversial but legendary. Prepare it properly with plenty of marjoram and garlic. Use pre-cooked tripe to save half a day. Rinse it well with boiling water. Splash of vinegar at the end. Acquired taste — but those who love it, love it for life.",
     ingredients: {
       zaklad: [
         { sk: "Držky predvarené", cs: "Dršťky předvařené", perPortion: 220, unit: "g", pricePerKg: 9.50 }
@@ -1979,9 +2104,11 @@ const RECIPES = {
   halaszle: {
     name_sk: "🐟 Halászlé (dunajská pýcha)",
     name_cs: "🐟 Halászlé (dunajská pýcha)",
+    name_en: "🐟 Halászlé (Hungarian Fisherman's Soup)",
     prepTime: 30, cookTime: 75,
     advice_sk: "Dunajská pýcha. Červená paprika a riečne ryby. NEMIEŠAJ! Len potriasaj kotlíkom, inak sa ryba rozbije na kašu a bude plná kostí. Priprav si vreckovky, bude to pálivá jazda.",
     advice_cs: "Dunajská pýcha. Červená paprika a říční ryby. NEMÍCHEJ! Jen potřásej kotlíkem, jinak se ryba rozbije na kaši. Připrav si kapesníky, bude to pálivá jízda.",
+    advice_en: "The pride of the Danube. Hungarian sweet paprika and freshwater fish. DON'T STIR! Just swirl the cauldron, or the fish breaks into mush full of bones. Carp is traditional, but pike-perch or catfish work brilliantly. Cook in copper if you can. Grab some tissues — it's a spicy ride.",
     ingredients: {
       zaklad: [
         { sk: "Mix riečnych rýb (kapor/sumec/šťuka)", cs: "Mix říčních ryb (kapr/sumec/štika)", perPortion: 280, unit: "g", pricePerKg: 11.90 }
@@ -2007,9 +2134,11 @@ const RECIPES = {
   bramboracka: {
     name_sk: "🥔 Bramboračka (česká klasika)",
     name_cs: "🥔 Bramboračka (česká klasika)",
+    name_en: "🥔 Czech Potato Soup (Bramboračka)",
     prepTime: 20, cookTime: 60,
     advice_sk: "Vôňa českých lesov a lúk. Hrsť sušených húb a čerstvé zemiaky. Majoránku pridaj až po odstavení z ohňa, inak zhorkne. Koreňová zelenina je duša — nešetri na nej.",
     advice_cs: "Vůně českých lesů a luk. Hrst sušených hub a čerstvé brambory. Majoránku přidej až po odstavení z ohně, jinak zhořkne. Kořenová zelenina je duše.",
+    advice_en: "The aroma of Czech forests and meadows. A handful of dried porcini and fresh potatoes. Add marjoram only after removing from the heat — it turns bitter otherwise. Don't skimp on root vegetables — they're the soul of the dish. Best eaten the next day.",
     ingredients: {
       zaklad: [
         { sk: "Zemiaky", cs: "Brambory", perPortion: 320, unit: "g", pricePerKg: 0.95 },
@@ -2039,9 +2168,11 @@ const RECIPES = {
   gulasova_polievka: {
     name_sk: "🥣 Gulášová polievka",
     name_cs: "🥣 Gulášová polévka",
+    name_en: "🥣 Goulash Soup (lighter version)",
     prepTime: 25, cookTime: 150,
     advice_sk: "Rýchla záchrana pre unavených pútnikov. Hustá, horúca a poctivá. Viac zemiakov ako mäsa — je to polievka, nie guláš. Nechaj ju poriadne prevrieť, nech má 'telo'.",
     advice_cs: "Rychlá záchrana pro unavené poutníky. Hustá, horká a poctivá. Více brambor než masa — je to polévka, ne guláš. Nech ji pořádně povařit.",
+    advice_en: "A quick rescue for tired travellers. Thick, hot, and honest. More potatoes than meat — it's a soup, not a stew. Smaller meat cubes (2×2 cm), finely chopped onion. Let it simmer properly so it has 'body'. Perfect for big crowds where you want everyone fed fast.",
     ingredients: {
       maso: [
         { sk: "Hovädzie zadné", cs: "Hovězí zadní", perPortion: 150, unit: "g", pricePerKg: 13.50 }
@@ -2070,9 +2201,11 @@ const RECIPES = {
   cesnecka: {
     name_sk: "🧄 Česnečka (vyprošťovák)",
     name_cs: "🧄 Česnečka (vyprošťovák)",
+    name_en: "🧄 Czech Garlic Soup (Česnečka — the hangover cure)",
     prepTime: 15, cookTime: 40,
     advice_sk: "Ranný zázrak. Ostrá, cesnaková a nekonečne posilňujúca. Polovicu cesnaku daj na začiatok, druhú prelisuj minútu pred podávaním — to je tajomstvo sily. Krutóny rob až tesne pred podávaním.",
     advice_cs: "Ranní zázrak. Ostrá, česneková a nekonečně posilňující. Polovinu česneku dej na začátek, druhou prolisuj minutu před podáváním. Krutóny dělej až těsně před podáváním.",
+    advice_en: "The morning miracle. Sharp, garlicky, and infinitely restorative. Add half the garlic at the start, press the other half in one minute before serving — that's the secret of its power. Make croutons just before serving. Top with grated cheese and a poached egg if you're feeling fancy.",
     ingredients: {
       zaklad: [
         { sk: "Cesnak (celé hlavy)", cs: "Česnek (celé hlavy)", perPortion: 25, unit: "g", pricePerKg: 9.90 },
@@ -2103,19 +2236,23 @@ const RECIPES = {
 const MATERIALS = {
   smalt: {
     sk: "Klasika, ktorá nesklame. Rozvádza teplo rovnomerne, ale pozor na kovové varechy — nepoškriabeš dno.",
-    cs: "Klasika, která nezklame. Rozvádí teplo rovnoměrně, ale pozor na kovové vařečky."
+    cs: "Klasika, která nezklame. Rozvádí teplo rovnoměrně, ale pozor na kovové vařečky.",
+    en: "A classic that won't let you down. Distributes heat evenly, but watch out for metal spoons — you'll scratch the bottom."
   },
   nerez: {
     sk: "Moderný vzhľad, ale tenké dno. Pri hustých jedlách (fazuľovica, držková) miešaj každých 5 minút, inak prihorí!",
-    cs: "Moderní vzhled, ale tenké dno. U hustých jídel míchej každých 5 minut, jinak připálí!"
+    cs: "Moderní vzhled, ale tenké dno. U hustých jídel míchej každých 5 minut, jinak připálí!",
+    en: "Modern look, but thin bottom. For thick dishes (bean soup, tripe soup) stir every 5 minutes, or it'll burn!"
   },
   liatina: {
     sk: "Kráľ ohňa. Drží teplo neskutočne dlho — môžeš stiahnuť oheň a jedlo dôjde samo. Najlepšia chuť, ale ťažký (10-kg kotlík váži prázdny 8 kg).",
-    cs: "Král ohně. Drží teplo neskutečně dlouho. Nejlepší chuť, ale těžký."
+    cs: "Král ohně. Drží teplo neskutečně dlouho. Nejlepší chuť, ale těžký.",
+    en: "King of fire. Holds heat for ages — you can pull the fire away and the food finishes itself. Best flavour, but heavy (a 10 L cauldron weighs 8 kg empty)."
   },
   med: {
     sk: "Špičkový prenos tepla. Ideálny na halászlé a jemné polievky. Vyžaduje poctivú údržbu — hneď po varení umyť.",
-    cs: "Špičkový přenos tepla. Ideální na halászlé. Vyžaduje poctivou údržbu."
+    cs: "Špičkový přenos tepla. Ideální na halászlé. Vyžaduje poctivou údržbu.",
+    en: "Top-tier heat conduction. Ideal for halászlé and delicate soups. Requires proper maintenance — wash immediately after cooking."
   }
 };
 
@@ -2142,15 +2279,27 @@ const PARTNERS = {
     currency: "Kč",
     currencyCode: "CZK",
     rate: 25.1  // EUR → CZK, priemer 2026
+  },
+  en: {
+    site: "www.kotliky.com",
+    url: "https://www.kotliky.com/",
+    kotlik: "https://www.kotliky.com/",
+    kotlina: "https://www.kotlik.sk/kotliny-pod-kotliky/",
+    supravy: "https://www.kotlik.sk/kotlikove-supravy-na-gulas",
+    horaky: "https://www.kotlik.sk/horaky-pod-kotliky",
+    currency: "£",
+    currencyCode: "GBP",
+    rate: 0.85  // EUR → GBP, priemer 2026
   }
 };
 
 /* === UTM PARAMETRE PRE AFFILIATE TRACKING === */
 function withUTM(url, position) {
   if (!url) return url;
-  const domain = window.location.hostname.includes('.cz')
-    ? 'gulasovakalkulacka.cz'
-    : 'gulasovakalkulacka.sk';
+  const h = window.location.hostname;
+  let domain = 'gulasovakalkulacka.sk';
+  if (h.includes('.com')) domain = 'goulashcalculator.com';
+  else if (h.includes('.cz')) domain = 'gulasovakalkulacka.cz';
   const params = new URLSearchParams({
     utm_source: domain,
     utm_medium: 'affiliate',
@@ -2169,9 +2318,10 @@ let checkedItems = new Set();
 
 // === INIT ===
 function init() {
-  // Detect language from domain
+  // Detect language from domain — .com=EN | .cz=CZ | else=SK
   const hostname = window.location.hostname;
-  if (hostname.includes('.cz')) currentLang = 'cs';
+  if (hostname.includes('.com')) currentLang = 'en';
+  else if (hostname.includes('.cz')) currentLang = 'cs';
 
   // Populate recipe dropdown
   const recipeSelect = document.getElementById('recipeSelect');
@@ -2209,7 +2359,7 @@ function switchLang(lang) {
   currentLang = lang;
   const t = I18N[lang];
 
-  document.documentElement.lang = lang === 'cs' ? 'cs' : 'sk';
+  document.documentElement.lang = (lang === 'en') ? 'en' : (lang === 'cs' ? 'cs' : 'sk');
   document.getElementById('pageTitle').textContent = t.title;
   document.getElementById('pageDesc').setAttribute('content', t.desc);
   document.getElementById('mainTitle').textContent = t.mainTitle;
@@ -2291,10 +2441,10 @@ function switchLang(lang) {
   document.getElementById('partnerLink').href = withUTM(p.url, 'footer_partner');
   document.getElementById('partnerLink').textContent = p.site;
 
-  // Footer Kontakt link — SK → kotlik.sk/kontakty, CZ → levnekotliky.cz/kontakty
+  // Footer Kontakt link — SK/EN → kotlik.sk/kontakty, CZ → levnekotliky.cz/kontakty
   const navContactEl = document.getElementById('navContact');
   if (navContactEl) {
-    navContactEl.href = lang === 'cs'
+    navContactEl.href = (lang === 'cs')
       ? 'https://www.levnekotliky.cz/kontakty'
       : 'https://www.kotlik.sk/kontakty';
   }
@@ -2320,14 +2470,18 @@ function switchLang(lang) {
   }
 
   // Update canonical + og
-  const baseUrl = lang === 'cs' ? 'https://gulasovakalkulacka.cz/' : 'https://gulasovakalkulacka.sk/';
+  let baseUrl = 'https://gulasovakalkulacka.sk/';
+  if (lang === 'en') baseUrl = 'https://goulashcalculator.com/';
+  else if (lang === 'cs') baseUrl = 'https://gulasovakalkulacka.cz/';
   document.getElementById('canonicalLink').href = baseUrl;
   document.getElementById('ogUrl').setAttribute('content', baseUrl);
   document.getElementById('ogTitle').setAttribute('content', t.title);
   document.getElementById('ogDesc').setAttribute('content', t.desc);
 
-  // OG image — SK/CZ variant podľa jazyka, absolútna URL podľa aktuálnej domény
-  const ogImgFile = lang === 'cs' ? 'og-image-cz.jpg' : 'og-image-sk.jpg';
+  // OG image — SK/CZ/EN variant podľa jazyka
+  let ogImgFile = 'og-image-sk.jpg';
+  if (lang === 'en') ogImgFile = 'og-image-en.jpg';
+  else if (lang === 'cs') ogImgFile = 'og-image-cz.jpg';
   const ogImgUrl = baseUrl + ogImgFile;
   const ogImgEl = document.getElementById('ogImage');
   const twImgEl = document.getElementById('twImage');
@@ -2335,9 +2489,10 @@ function switchLang(lang) {
   if (twImgEl) twImgEl.setAttribute('content', ogImgUrl);
   const ogImgAltEl = document.getElementById('ogImageAlt');
   if (ogImgAltEl) {
-    ogImgAltEl.setAttribute('content', lang === 'cs'
-      ? 'Gulášová kalkulačka — přesný výpočet surovin pro kotlíkový guláš'
-      : 'Gulášová kalkulačka — presný výpočet surovín pre kotlíkový guláš');
+    let altText = 'Gulášová kalkulačka — presný výpočet surovín pre kotlíkový guláš';
+    if (lang === 'en') altText = 'Goulash Calculator — accurate ingredient calculation for cauldron-cooked Hungarian goulash';
+    else if (lang === 'cs') altText = 'Gulášová kalkulačka — přesný výpočet surovin pro kotlíkový guláš';
+    ogImgAltEl.setAttribute('content', altText);
   }
 
   calculate();
@@ -2393,7 +2548,7 @@ function calculate() {
       itemEl.dataset.key = itemKey;
       itemEl.innerHTML = `
         <input type="checkbox" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()">
-        <span class="item-name">${ing[currentLang]}</span>
+        <span class="item-name">${ing[currentLang] || ing.en || ing.sk}</span>
         <span class="item-amount">${amountStr} ${unit}</span>
         ${itemPrice > 0.01 ? `<span class="item-price">${formatPrice(itemPrice, p)}</span>` : ''}
       `;
@@ -2471,6 +2626,9 @@ function formatPrice(eur, partner) {
   const val = eur * partner.rate;
   if (partner.currency === 'Kč') {
     return Math.round(val).toLocaleString('cs-CZ') + ' Kč';
+  }
+  if (partner.currency === '£') {
+    return '£' + val.toFixed(2);
   }
   return val.toFixed(2).replace('.', ',') + ' €';
 }
@@ -2550,7 +2708,10 @@ function buildShareText() {
   const people = document.getElementById('peopleCount').value;
   const t = I18N[currentLang];
   const p = PARTNERS[currentLang];
-  let txt = `${r['name_' + currentLang]} — ${people} ${currentLang === 'sk' ? 'porcií' : 'porcí'}\n`;
+  let portionsLabel = 'porcií';
+  if (currentLang === 'cs') portionsLabel = 'porcí';
+  else if (currentLang === 'en') portionsLabel = 'servings';
+  let txt = `${r['name_' + currentLang]} — ${people} ${portionsLabel}\n`;
   txt += `${'='.repeat(30)}\n`;
   document.querySelectorAll('#ingredientsOutput .item').forEach(item => {
     const name = item.querySelector('.item-name').textContent;
@@ -2559,7 +2720,9 @@ function buildShareText() {
   });
   txt += `${'='.repeat(30)}\n`;
   txt += `💰 ${t.lblTotal} ${document.getElementById('totalPrice').textContent}\n`;
-  const url = currentLang === 'cs' ? 'https://gulasovakalkulacka.cz' : 'https://gulasovakalkulacka.sk';
+  let url = 'https://gulasovakalkulacka.sk';
+  if (currentLang === 'en') url = 'https://goulashcalculator.com';
+  else if (currentLang === 'cs') url = 'https://gulasovakalkulacka.cz';
   txt += `\n📱 ${url}`;
   return txt;
 }
@@ -2579,7 +2742,7 @@ function shareList() {
 function copyList() {
   const text = buildShareText();
   navigator.clipboard.writeText(text).then(() => {
-    alert(currentLang === 'sk' ? '✓ Skopírované!' : '✓ Zkopírováno!');
+    alert(currentLang === 'en' ? '✓ Copied!' : (currentLang === 'cs' ? '✓ Zkopírováno!' : '✓ Skopírované!'));
   }).catch(() => {
     const ta = document.createElement('textarea');
     ta.value = text;
@@ -2587,7 +2750,7 @@ function copyList() {
     ta.select();
     document.execCommand('copy');
     document.body.removeChild(ta);
-    alert(currentLang === 'sk' ? '✓ Skopírované!' : '✓ Zkopírováno!');
+    alert(currentLang === 'en' ? '✓ Copied!' : (currentLang === 'cs' ? '✓ Zkopírováno!' : '✓ Skopírované!'));
   });
 }
 
@@ -2604,9 +2767,15 @@ function declineCookies() {
 
 function showPrivacy(e) {
   e.preventDefault();
-  alert(currentLang === 'sk'
-    ? 'Ochrana údajov: Nepoužívame žiadne tracking cookies, Google Analytics, ani reklamné systémy. Ukladáme iba tvoj odškrtnutý nákupný zoznam do localStorage tvojho prehliadača, ak súhlasíš s cookies. Žiadne dáta neposielame na server.'
-    : 'Ochrana údajů: Nepoužíváme žádné tracking cookies, Google Analytics ani reklamní systémy. Ukládáme pouze váš nákupní seznam do localStorage vašeho prohlížeče. Žádná data neposíláme na server.');
+  let msg;
+  if (currentLang === 'en') {
+    msg = 'Privacy: We do not use any tracking cookies, Google Analytics, or advertising systems. We only store your shopping list checkmarks in your browser\'s localStorage if you accept cookies. No data is sent to a server.';
+  } else if (currentLang === 'cs') {
+    msg = 'Ochrana údajů: Nepoužíváme žádné tracking cookies, Google Analytics ani reklamní systémy. Ukládáme pouze váš nákupní seznam do localStorage vašeho prohlížeče. Žádná data neposíláme na server.';
+  } else {
+    msg = 'Ochrana údajov: Nepoužívame žiadne tracking cookies, Google Analytics, ani reklamné systémy. Ukladáme iba tvoj odškrtnutý nákupný zoznam do localStorage tvojho prehliadača, ak súhlasíš s cookies. Žiadne dáta neposielame na server.';
+  }
+  alert(msg);
 }
 
 // === LITERS COUNTER ===

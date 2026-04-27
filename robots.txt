@@ -1,14 +1,17 @@
 # =====================================================
-# Gulášová Kalkulačka — robots.txt
-# https://gulasovakalkulacka.sk  |  https://gulasovakalkulacka.cz
+# Gulášová Kalkulačka / Goulash Calculator — robots.txt
+# SK: https://gulasovakalkulacka.sk
+# CZ: https://gulasovakalkulacka.cz
+# EN: https://goulashcalculator.com
 # =====================================================
 
 User-agent: *
 Allow: /
 
-# ----- Sitemapy pre obe domény -----
+# ----- Sitemapy pre všetky 3 domény -----
 Sitemap: https://gulasovakalkulacka.sk/sitemap.xml
 Sitemap: https://gulasovakalkulacka.cz/sitemap.xml
+Sitemap: https://goulashcalculator.com/sitemap.xml
 
 # ----- Blokovať tracking parametre (ale povoliť ?recipe= pre PWA shortcuts) -----
 Disallow: /*utm_*

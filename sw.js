@@ -1,9 +1,9 @@
-/* Service Worker — Gulášová Kalkulačka
+/* Service Worker — Gulášová Kalkulačka / Goulash Calculator
  * Offline-first caching pre PWA
- * Verzia: 4.0.0 — schema.org fix (Recipe image/author/datePublished + FAQ dedupe)
+ * Verzia: 5.0.0 — pridaná tretia jazyková verzia EN (goulashcalculator.com)
  */
 
-const CACHE_NAME = 'gulas-kalk-v4';
+const CACHE_NAME = 'gulas-kalk-v5';
 
 /* Statické core aktíva — pre-cachované pri inštalácii */
 const CORE_ASSETS = [
@@ -21,6 +21,7 @@ const CORE_ASSETS = [
   './timeline-varenia.webp',
   './og-image-sk.jpg',
   './og-image-cz.jpg',
+  './og-image-en.jpg',
   './icon-192.png',
   './icon-512.png',
   './icon-maskable-512.png'

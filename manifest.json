@@ -1,7 +1,7 @@
 {
-  "name": "Gulášová Kalkulačka",
+  "name": "Gulášová Kalkulačka — Goulash Calculator",
   "short_name": "Guláš Kalk",
-  "description": "Presný výpočet surovín pre guláš v kotlíku. 11 receptov, nákupný zoznam, timeline varenia.",
+  "description": "Presný výpočet surovín pre guláš v kotlíku. 11 receptov, nákupný zoznam, timeline varenia. (SK / CZ / EN — Hungarian goulash calculator for cauldron cooking)",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
