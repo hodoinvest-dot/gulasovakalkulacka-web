@@ -1433,8 +1433,8 @@
   <section class="timeline-section" id="timelineSection">
     <h3 id="lblTimeline">⏱️ Časový plán varenia</h3>
     <picture>
-      <source srcset="timeline-varenia.webp" type="image/webp">
-      <img src="timeline-varenia.jpg" alt="6-krokový časový plán varenia gulášu v kotlíku — od rozpálenia po hotové jedlo" class="inline-image" width="900" height="500" loading="lazy">
+      <source id="timelineSrcWebp" srcset="timeline-varenia.webp" type="image/webp">
+      <img id="timelineImg" src="timeline-varenia.jpg" alt="6-krokový časový plán varenia gulášu v kotlíku — od rozpálenia po hotové jedlo" class="inline-image" width="900" height="500" loading="lazy">
     </picture>
     <div class="timeline" id="timeline"></div>
   </section>
@@ -1854,6 +1854,42 @@ const I18N = {
       a7: "Allow about 0.4 kg of hardwood (oak, beech) per 1 litre of food for a 3-4 hour cook. For a 20-litre cauldron you'll need 8-10 kg of wood plus reserve. Softwood (pine, spruce) burns fast and gives few coals — don't use it.",
       q8: "Do I need a gas burner for my cauldron? When is it worth buying one?",
       a8: "<strong>When a burner is worth it:</strong> when you don't have space for an open fire (balcony, terrace, garden without a fire pit), want a quick start (cauldron is hot in 2 minutes instead of 20 with wood), or need precise temperature control for thick goulashes.<br><br><strong>Which burner to choose by cauldron size:</strong><br>• <strong>Cauldron up to 20 L</strong> → <a href=\"https://www.kotlik.sk/plynovy-horak-hu-5-5-kw-pripojovacie-prislusenstvo\" target=\"_blank\" rel=\"sponsored noopener\">5.5 kW gas burner</a> — compact, economical<br>• <strong>Cauldron 20–100 L</strong> → <a href=\"https://www.kotlik.sk/liatinovy-plynovy-varic-horak-7-5-kw-hu-pripojovacie-prislusenstvo\" target=\"_blank\" rel=\"sponsored noopener\">7.5 kW cast-iron burner</a> (universal) or stronger triple-ring <a href=\"https://www.kotlik.sk/liatinovy-plynovy-varic-8-8-kw-3p-ghisa-tlakova-hadica-1-5-m-regulator-30-mbar-2-hadicove-spony\" target=\"_blank\" rel=\"sponsored noopener\">Ghisa 8.8 kW 3P</a> (faster heat-up, better wind resistance)<br><br><strong>The package includes everything:</strong> propane-butane pressure hose (1.5 m), 30 mbar pressure regulator, and 2 hose clamps — nothing extra to buy. Pro tip: burner to start, wood to finish = smoke flavour + convenience."
+    },
+    seo: {
+      h2_1: "Goulash Calculator 2026 — How to Calculate Ingredients for Cauldron Goulash for 10, 20, 50 or 100 People?",
+      p_1: "Enter the number of people, choose one of 11 recipes, portion size, and cauldron material. The calculator instantly computes the exact amount of meat, onions, potatoes, and spices, estimates the cost in £, suggests a cooking timeline, and recommends the right cauldron size. Free, no signup, works offline after first load.",
+      h3_1: "Why is accurate meat calculation for goulash important?",
+      p_2: "When cooking for 20-100 people in a cauldron, you can't afford a 20% mistake — either you'll run out of food, or you'll have 10 kg of leftover goulash that no one will eat. Our calculator uses real ratios tested at dozens of events, factors in 15% evaporation during long cooking, and a cauldron reserve (1.3× the food volume).",
+      h3_quickref: "Quick reference — how much meat for goulash by number of people",
+      quickRef: [
+        "<strong>Goulash for 10 people:</strong> 2.5 kg meat, 2.5 kg onions, 2 kg potatoes, 80 g paprika • 10 L cauldron",
+        "<strong>Goulash for 20 people:</strong> 5 kg meat, 5 kg onions, 4 kg potatoes, 160 g paprika • 15 L cauldron",
+        "<strong>Goulash for 30 people:</strong> 7.5 kg meat, 7.5 kg onions, 6 kg potatoes, 240 g paprika • 20–25 L cauldron",
+        "<strong>Goulash for 50 people:</strong> 12.5 kg meat, 12.5 kg onions, 10 kg potatoes, 400 g paprika • 30–40 L cauldron",
+        "<strong>Goulash for 100 people:</strong> 25 kg meat, 25 kg onions, 20 kg potatoes, 800 g paprika • 60–80 L cauldron",
+        "<strong>Goulash for 200 people:</strong> 50 kg meat, 50 kg onions, 40 kg potatoes, 1.6 kg paprika • 100 L cauldron or 2× 80 L (recommended for events this large)"
+      ],
+      h3_2: "What else do you get besides the recipe?",
+      list_1: [
+        "Exact amounts of every ingredient (meat, vegetables, spices)",
+        "Total cost and cost per serving in £",
+        "Shopping list with checkboxes — tick off items right at the store",
+        "Cooking timeline — from start to serving",
+        "Recommended cauldron size by number of people",
+        "Master's tip for every recipe",
+        "Tips by cauldron material (cast iron / stainless steel / enamel / copper)"
+      ],
+      h2_3: "10 master tips for cauldron cooking — how to make the best goulash",
+      list_2: [
+        "<strong>Onion is the soul of goulash</strong> — the onion-to-meat ratio must be at least 1:1, ideally 1.2:1. Don't skimp.",
+        "<strong>Cube meat into 3×3 cm pieces</strong> — smaller will fall apart, bigger won't cook through.",
+        "<strong>Sauté the onion 12-15 minutes until golden brown first</strong> — this is the foundation of flavour, irreplaceable.",
+        "<strong>Hardwood = better goulash</strong> — beech, oak, hornbeam give stable temperatures. Fruitwood (cherry, apple) adds a delicate aroma.",
+        "<strong>Salt only at the end</strong> — if cooking with smoked meat or sausage, those are salty enough. Salt only after tasting.",
+        "<strong>Yesterday's goulash tastes best</strong> — if you have time, cook it a day ahead. The flavours balance overnight."
+      ],
+      h2_4: "11 popular cauldron recipes 2026 — from beef goulash to halászlé",
+      p_3: "<strong>Beef goulash</strong> remains the undefeated classic of European yards and country houses. <strong>Pork goulash</strong> is the economical choice for big groups. <strong>Cauldron-cooked kapustnica</strong> (Slovak cabbage soup) is making a comeback — the combination of smoke and sauerkraut is irreplaceable. <strong>Bean soup with smoked pork knuckle</strong> is one of the heartiest dishes a cauldron can produce. For Christmas and New Year, <strong>cesnecka</strong> (garlic soup) reigns — the legendary hangover cure. Czech <strong>bramboracka</strong> and Hungarian <strong>halaszle</strong> expand the repertoire with regional treasures."
     }
   }
 };
@@ -2495,6 +2531,9 @@ function switchLang(lang) {
     ogImgAltEl.setAttribute('content', altText);
   }
 
+  // === SEO blok — dynamický update podľa jazyka ===
+  updateSeoContent(lang);
+
   // === Kotliky-porovnanie obrázok — EN má vlastnú verziu s anglickým textom ===
   const kotlikyImg = document.getElementById('kotlikyImg');
   const kotlikySrcWebp = document.getElementById('kotlikySrcWebp');
@@ -2512,10 +2551,134 @@ function switchLang(lang) {
     }
   }
 
+  // === Timeline-varenia obrázok — EN má vlastnú verziu ===
+  const timelineImg = document.getElementById('timelineImg');
+  const timelineSrcWebp = document.getElementById('timelineSrcWebp');
+  if (timelineImg && timelineSrcWebp) {
+    if (lang === 'en') {
+      timelineImg.src = 'timeline-varenia-en.jpg';
+      timelineSrcWebp.srcset = 'timeline-varenia-en.webp';
+      timelineImg.alt = '7-step cooking timeline for cauldron goulash — from preparation to serving';
+    } else {
+      timelineImg.src = 'timeline-varenia.jpg';
+      timelineSrcWebp.srcset = 'timeline-varenia.webp';
+      timelineImg.alt = (lang === 'cs')
+        ? '6-krokový časový plán vaření guláše v kotlíku — od rozpálení po hotové jídlo'
+        : '6-krokový časový plán varenia gulášu v kotlíku — od rozpálenia po hotové jedlo';
+    }
+  }
+
   // === SCHEMA.ORG dynamický update — Recipe + WebApplication podľa jazyka ===
   updateSchema(lang, baseUrl, ogImgUrl);
 
   calculate();
+}
+
+// === SEO BLOK dynamický update podľa jazyka ===
+const SEO_CONTENT = {
+  sk: {
+    h2_1: "Gulášová kalkulačka 2026 — ako vypočítať suroviny na kotlíkový guláš pre 10, 20, 50 alebo 100 ľudí?",
+    p_1: "Zadáš počet ľudí, vyberieš jeden z 11 receptov, veľkosť porcie a materiál kotlíka. Kalkulačka okamžite vypočíta presné množstvo mäsa, cibule, zemiakov a korenín, odhadne cenu v eurách, navrhne časový plán varenia a odporučí správnu veľkosť kotlíka. Všetko zadarmo, bez registrácie, funguje aj offline po prvom načítaní.",
+    h3_1: "Prečo je presný výpočet mäsa na guláš dôležitý?",
+    p_2: "Pri kotlíkovom varení pre 20-100 ľudí si chybu o 20% nemôžeš dovoliť — buď zostaneš bez obeda, alebo ti zostane 10 kg gulášu, ktorý nikto nezje. Naša kalkulačka počíta s reálnymi pomermi overenými na desiatkach akcií, rátame s 15% výparom pri dlhom varení a rezervou v kotlíku (1,3× objem jedla).",
+    h3_quickref: "Rýchly prehľad — koľko mäsa na guláš podľa počtu ľudí",
+    quickRef: [
+      "<strong>Guláš pre 10 ľudí:</strong> 2,5 kg mäsa, 2,5 kg cibule, 2 kg zemiakov, 80 g papriky • kotlík 10 l",
+      "<strong>Guláš pre 20 ľudí:</strong> 5 kg mäsa, 5 kg cibule, 4 kg zemiakov, 160 g papriky • kotlík 15 l",
+      "<strong>Guláš pre 30 ľudí:</strong> 7,5 kg mäsa, 7,5 kg cibule, 6 kg zemiakov, 240 g papriky • kotlík 20–25 l",
+      "<strong>Guláš pre 50 ľudí:</strong> 12,5 kg mäsa, 12,5 kg cibule, 10 kg zemiakov, 400 g papriky • kotlík 30–40 l",
+      "<strong>Guláš pre 100 ľudí:</strong> 25 kg mäsa, 25 kg cibule, 20 kg zemiakov, 800 g papriky • kotlík 60–80 l",
+      "<strong>Guláš pre 200 ľudí:</strong> 50 kg mäsa, 50 kg cibule, 40 kg zemiakov, 1,6 kg papriky • 100 l kotlík alebo 2× 80 l (odporúčané pri tak veľkých akciách)"
+    ],
+    h3_2: "Čo všetko dostaneš okrem receptu?",
+    list_1: [
+      "Presné množstvá každej ingrediencie (mäso, zelenina, koreniny)",
+      "Odhad celkovej ceny a ceny za porciu v €",
+      "Nákupný zoznam s checkboxmi — odškrtávaj priamo v obchode",
+      "Časový plán varenia — od štartu po servírovanie",
+      "Odporúčanú veľkosť kotlíka podľa počtu ľudí",
+      "Emotívnu radu majstra pre každý recept",
+      "Tipy podľa materiálu kotlíka (liatina / nerez / smalt / meď)"
+    ],
+    h2_3: "10 tipov od majstra kotlíkového varenia — ako uvariť najlepší guláš",
+    list_2: [
+      "<strong>Cibuľa je duša gulášu</strong> — pomer cibuľa:mäso musí byť minimálne 1:1, ideálne 1,2:1. Nešetri.",
+      "<strong>Mäso krájaj na kocky 3×3 cm</strong> — menšie sa rozpadnú, väčšie sa neprevaria.",
+      "<strong>Najprv osmaž cibuľu 12-15 minút do zlatohneda</strong> — to je základ chuti, ktorý nenahradíš ničím.",
+      "<strong>Tvrdé drevo = lepší guláš</strong> — buk, dub, hrab dávajú stabilnú teplotu. Ovocné drevo (čerešňa, jabloň) pridáva jemnú arómu.",
+      "<strong>Soľ až na konci</strong> — ak varíš s údeným mäsom alebo klobásou, tie sú slané dosť. Dosoľ až po ochutnaní.",
+      "<strong>Guláš z včera chutí najlepšie</strong> — ak máš čas, uvarí ho deň vopred. Cez noc sa vyrovnajú chute."
+    ],
+    h2_4: "11 populárnych kotlíkových receptov 2026 — od hovädzieho gulášu po halászlé",
+    p_3: "<strong>Hovädzí guláš</strong> zostáva neporaziteľnou klasikou slovenských dvorov a chalúp. <strong>Bravčový guláš</strong> je ekonomická voľba pre veľké skupiny. <strong>Kapustnica v kotlíku</strong> zažíva comeback — kombinácia dymu a kyslej kapusty je nenahraditeľná. <strong>Fazuľovica s údeným kolenom</strong> patrí k najsýtejším jedlám, aké kotlík dokáže vyprodukovať. Na Vianoce a Silvestra dominuje <strong>česnečka</strong> — vyprošťovací šampión. Česká <strong>bramboračka</strong> a maďarské <strong>halászlé</strong> rozširujú repertoár o regionálne poklady."
+  },
+  cs: {
+    h2_1: "Gulášová kalkulačka 2026 — jak vypočítat suroviny na kotlíkový guláš pro 10, 20, 50 nebo 100 lidí?",
+    p_1: "Zadáš počet lidí, vybereš jeden z 11 receptů, velikost porce a materiál kotlíku. Kalkulačka okamžitě vypočítá přesné množství masa, cibule, brambor a koření, odhadne cenu v korunách, navrhne časový plán vaření a doporučí správnou velikost kotlíku. Vše zdarma, bez registrace, funguje i offline po prvním načtení.",
+    h3_1: "Proč je přesný výpočet masa na guláš důležitý?",
+    p_2: "Při kotlíkovém vaření pro 20-100 lidí si chybu o 20% nemůžeš dovolit — buď zůstaneš bez oběda, nebo ti zůstane 10 kg guláše, který nikdo nesní. Naše kalkulačka počítá s reálnými poměry ověřenými na desítkách akcí, počítáme s 15% výparem při dlouhém vaření a rezervou v kotlíku (1,3× objem jídla).",
+    h3_quickref: "Rychlý přehled — kolik masa na guláš podle počtu lidí",
+    quickRef: [
+      "<strong>Guláš pro 10 lidí:</strong> 2,5 kg masa, 2,5 kg cibule, 2 kg brambor, 80 g papriky • kotlík 10 l",
+      "<strong>Guláš pro 20 lidí:</strong> 5 kg masa, 5 kg cibule, 4 kg brambor, 160 g papriky • kotlík 15 l",
+      "<strong>Guláš pro 30 lidí:</strong> 7,5 kg masa, 7,5 kg cibule, 6 kg brambor, 240 g papriky • kotlík 20–25 l",
+      "<strong>Guláš pro 50 lidí:</strong> 12,5 kg masa, 12,5 kg cibule, 10 kg brambor, 400 g papriky • kotlík 30–40 l",
+      "<strong>Guláš pro 100 lidí:</strong> 25 kg masa, 25 kg cibule, 20 kg brambor, 800 g papriky • kotlík 60–80 l",
+      "<strong>Guláš pro 200 lidí:</strong> 50 kg masa, 50 kg cibule, 40 kg brambor, 1,6 kg papriky • 100 l kotlík nebo 2× 80 l (doporučeno při tak velkých akcích)"
+    ],
+    h3_2: "Co všechno dostaneš kromě receptu?",
+    list_1: [
+      "Přesná množství každé ingredience (maso, zelenina, koření)",
+      "Odhad celkové ceny a ceny za porci v Kč",
+      "Nákupní seznam s checkboxy — odškrtávej přímo v obchodě",
+      "Časový plán vaření — od startu po servírování",
+      "Doporučenou velikost kotlíku podle počtu lidí",
+      "Emotivní radu mistra pro každý recept",
+      "Tipy podle materiálu kotlíku (litina / nerez / smalt / měď)"
+    ],
+    h2_3: "10 tipů od mistra kotlíkového vaření — jak uvařit nejlepší guláš",
+    list_2: [
+      "<strong>Cibule je duše guláše</strong> — poměr cibule:maso musí být minimálně 1:1, ideálně 1,2:1. Nešetři.",
+      "<strong>Maso krájej na kostky 3×3 cm</strong> — menší se rozpadnou, větší se neprovaří.",
+      "<strong>Nejprve osmaž cibuli 12-15 minut do zlatohněda</strong> — to je základ chuti, který nenahradíš ničím.",
+      "<strong>Tvrdé dřevo = lepší guláš</strong> — buk, dub, habr dávají stabilní teplotu. Ovocné dřevo (třešeň, jabloň) přidává jemnou aroma.",
+      "<strong>Sůl až na konci</strong> — pokud vaříš s uzeným masem nebo klobásou, ty jsou slané dost. Dosoľ až po ochutnání.",
+      "<strong>Guláš ze včerejška chutná nejlépe</strong> — pokud máš čas, uvař ho den předem. Přes noc se vyrovnají chutě."
+    ],
+    h2_4: "11 populárních kotlíkových receptů 2026 — od hovězího guláše po halászlé",
+    p_3: "<strong>Hovězí guláš</strong> zůstává neporaženou klasikou českých dvorů a chalup. <strong>Vepřový guláš</strong> je ekonomická volba pro velké skupiny. <strong>Zelňačka v kotlíku</strong> zažívá comeback — kombinace kouře a kysaného zelí je nenahraditelná. <strong>Fazolová polévka s uzeným kolenem</strong> patří k nejsytějším jídlům, které kotlík dokáže vyprodukovat. Na Vánoce a Silvestra dominuje <strong>česnečka</strong> — vyprošťovací šampion. Česká <strong>bramboračka</strong> a maďarské <strong>halászlé</strong> rozšiřují repertoár o regionální poklady."
+  }
+};
+
+function updateSeoContent(lang) {
+  // Použijeme data z I18N.en.seo (pre EN) alebo SEO_CONTENT.sk/cs
+  let s = null;
+  if (lang === 'en' && I18N.en && I18N.en.seo) s = I18N.en.seo;
+  else if (lang === 'cs') s = SEO_CONTENT.cs;
+  else s = SEO_CONTENT.sk;
+
+  const setText = (id, html) => {
+    const el = document.getElementById(id);
+    if (el && html) el.innerHTML = html;
+  };
+  const setList = (id, items) => {
+    const el = document.getElementById(id);
+    if (!el || !items) return;
+    el.innerHTML = items.map(it => `<li>${it}</li>`).join('');
+  };
+
+  setText('seoH2_1', s.h2_1);
+  setText('seoP_1', s.p_1);
+  setText('seoH3_1', s.h3_1);
+  setText('seoP_2', s.p_2);
+  setText('seoH3_quickref', s.h3_quickref);
+  setList('seoQuickRef', s.quickRef);
+  setText('seoH3_2', s.h3_2);
+  setList('seoList_1', s.list_1);
+  setText('seoH2_3', s.h2_3);
+  setList('seoList_2', s.list_2);
+  setText('seoH2_4', s.h2_4);
+  setText('seoP_3', s.p_3);
 }
 
 // === SCHEMA.ORG DYNAMICKÝ UPDATE pre 3 jazyky ===

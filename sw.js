@@ -1,9 +1,9 @@
 /* Service Worker — Gulášová Kalkulačka / Goulash Calculator
  * Offline-first caching pre PWA
- * Verzia: 5.0.0 — pridaná tretia jazyková verzia EN (goulashcalculator.com)
+ * Verzia: 6.0.0 — EN obrázky kotlíkov + timeline + SEO blok dynamic
  */
 
-const CACHE_NAME = 'gulas-kalk-v5';
+const CACHE_NAME = 'gulas-kalk-v6';
 
 /* Statické core aktíva — pre-cachované pri inštalácii */
 const CORE_ASSETS = [
@@ -17,8 +17,12 @@ const CORE_ASSETS = [
   './ingredience.webp',
   './kotliky-porovnanie.jpg',
   './kotliky-porovnanie.webp',
+  './kotliky-porovnanie-en.jpg',
+  './kotliky-porovnanie-en.webp',
   './timeline-varenia.jpg',
   './timeline-varenia.webp',
+  './timeline-varenia-en.jpg',
+  './timeline-varenia-en.webp',
   './og-image-sk.jpg',
   './og-image-cz.jpg',
   './og-image-en.jpg',
