@@ -1570,8 +1570,8 @@
 </div>
 
 <!-- Back to top button -->
-<button id="backToTop" class="back-to-top" aria-label="Späť hore" onclick="scrollToTop()">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<button id="backToTop" type="button" class="back-to-top" aria-label="Späť hore" onclick="scrollToTop(event)">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="pointer-events:none">
     <path d="M12 4 L4 12 L7 12 L7 20 L17 20 L17 12 L20 12 Z" fill="currentColor"/>
   </svg>
 </button>
@@ -3165,14 +3165,39 @@ function toggleTheme() {
 })();
 
 // === BACK TO TOP + STICKY CTA SCROLL HANDLER ===
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function scrollToTop(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  // Smooth scroll s fallback pre staršie prehliadače
+  try {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  } catch (err) {
+    window.scrollTo(0, 0);
+  }
+  // Backup pre prípady keď smooth scroll zlyhá
+  setTimeout(function() {
+    if (window.scrollY > 50) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  }, 800);
 }
 (function initScrollControls() {
   const backBtn = document.getElementById('backToTop');
   const sticky = document.getElementById('stickyCta');
   const FOOTER_SAFE = 150; /* px od konca stránky — schovať sticky pri footer */
   let ticking = false;
+
+  // Pridaj robustný click + touch event listener (onclick atribút niekedy na mobile zlyháva)
+  if (backBtn) {
+    const handleClick = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      scrollToTop(e);
+    };
+    backBtn.addEventListener('click', handleClick);
+    backBtn.addEventListener('touchend', handleClick, { passive: false });
+  }
+
   function update() {
     const y = window.scrollY || window.pageYOffset;
     const docH = document.documentElement.scrollHeight;
