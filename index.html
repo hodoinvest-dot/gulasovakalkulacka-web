@@ -22,6 +22,11 @@
 <link rel="dns-prefetch" href="https://www.kotlik.sk">
 <link rel="dns-prefetch" href="https://www.levnekotliky.cz">
 
+<!-- Aldrich font pre SMOGI studio signature v pätičke -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap">
+
 <!-- === HREFLANG === -->
 <link rel="alternate" hreflang="sk" href="https://gulasovakalkulacka.sk/">
 <link rel="alternate" hreflang="cs" href="https://gulasovakalkulacka.cz/">
@@ -1053,6 +1058,48 @@
   }
   .footer-nav a:hover { color: var(--orange-main); }
 
+  /* === SMOGI STUDIO SIGNATURE === minimal, premium, low-key */
+  .smogi-signature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 32px auto 8px;
+    max-width: 560px;
+    padding: 0 16px;
+    opacity: 0.14;
+    transition: opacity 0.4s ease;
+  }
+  .smogi-signature:hover {
+    opacity: 0.45;
+  }
+  .smogi-text {
+    font-family: 'Aldrich', 'Eurostile', 'Saira', 'Trebuchet MS', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #C5D1D6;
+    white-space: nowrap;
+  }
+  .smogi-text strong {
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #67e8f5;
+  }
+  .smogi-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #C5D1D6 50%, transparent 100%);
+    max-width: 120px;
+    min-width: 30px;
+  }
+  @media (max-width: 480px) {
+    .smogi-signature { gap: 10px; max-width: 100%; }
+    .smogi-text { font-size: 0.6rem; letter-spacing: 3px; }
+    .smogi-line { max-width: 60px; }
+  }
+
   /* === COOKIE CONSENT === */
   .cookie-consent {
     position: fixed;
@@ -1576,6 +1623,13 @@
     <div class="copyright">
       © 2026 gulasovakalkulacka.sk / .cz<br>
       <span id="copyRights">Všetky práva vyhradené milovníkom ohňa</span>
+    </div>
+
+    <!-- SMOGI studio signature — minimal, premium look -->
+    <div class="smogi-signature" aria-label="created by SMOGI studio">
+      <span class="smogi-line"></span>
+      <span class="smogi-text">created by <strong>SMOGI</strong> studio</span>
+      <span class="smogi-line"></span>
     </div>
   </footer>
 </div>
@@ -2387,6 +2441,7 @@ function init() {
   if (!localStorage.getItem('cookies_decided')) {
     setTimeout(() => {
       document.getElementById('cookieConsent').classList.add('show');
+      document.body.classList.add('has-cookie-banner');
     }, 1500);
   }
 
@@ -3107,11 +3162,13 @@ function copyList() {
 function acceptCookies() {
   localStorage.setItem('cookies_decided', 'accepted');
   document.getElementById('cookieConsent').classList.remove('show');
+  document.body.classList.remove('has-cookie-banner');
 }
 
 function declineCookies() {
   localStorage.setItem('cookies_decided', 'declined');
   document.getElementById('cookieConsent').classList.remove('show');
+  document.body.classList.remove('has-cookie-banner');
 }
 
 function showPrivacy(e) {
