@@ -3186,14 +3186,19 @@ function showPrivacy(e) {
 
 // === LITERS COUNTER ===
 function initLitersCounter() {
-  // Deterministický counter — rastie cca 50 litrov za deň od launchu
-  const LAUNCH = new Date('2026-05-01').getTime();
-  const BASE = 12467;
-  const PER_DAY = 47;
+  // Štart: 2.5.2026 = 12531 litrov, rastie cca 65 litrov/deň + hodinová variácia
+  // (3 jazyky live → realistic rast)
+  const LAUNCH = new Date('2026-05-02T00:00:00').getTime();
+  const BASE = 12531;
+  const PER_DAY = 65;  // zvýšené z 47 — máme teraz aj EN trh
   const days = Math.max(0, Math.floor((Date.now() - LAUNCH) / 86400000));
-  const hourVariance = Math.floor((Date.now() % 86400000) / 86400000 * 40);
+  // Hodinová variácia: 0-65 litrov plynule cez deň (rastie počas dňa)
+  const hourVariance = Math.floor((Date.now() % 86400000) / 86400000 * PER_DAY);
   const value = BASE + days * PER_DAY + hourVariance;
-  document.getElementById('litersVal').textContent = value.toLocaleString(currentLang === 'cs' ? 'cs-CZ' : 'sk-SK');
+  let locale = 'sk-SK';
+  if (currentLang === 'cs') locale = 'cs-CZ';
+  else if (currentLang === 'en') locale = 'en-GB';
+  document.getElementById('litersVal').textContent = value.toLocaleString(locale);
 }
 
 // === DARK MODE TOGGLE ===
